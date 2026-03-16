@@ -387,7 +387,10 @@
 }
 
 .subpage-hero-vfx {
-  background: linear-gradient(135deg, #10182c 0%, #24385d 45%, #151821 100%);
+  background:
+    linear-gradient(rgba(10, 18, 30, 0.58), rgba(16, 24, 44, 0.76)),
+    url("../img/vjfader-KOII-VFX-1.jpeg") no-repeat center center;
+  background-size: cover;
 }
 
 .subpage-hero-stage {
