@@ -1,7 +1,6 @@
 title = "Fader"
 baseURL = "https://www.vjfader.com/"
 languageCode = "en-us"
-theme = "airspace-hugo"
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
