@@ -368,6 +368,14 @@
   color: #232633;
 }
 
+.contact-form-warning {
+  margin: 14px 0 0;
+  color: #ffd6d6 !important;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 @media (max-width: 767px) {
   #about .block img {
     width: 100%;

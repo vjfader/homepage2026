@@ -114,6 +114,8 @@
   </url><url>
     <loc>http://localhost:1313/work/</loc>
   </url><url>
+    <loc>http://localhost:1313/thanks/</loc>
+  </url><url>
     <loc>http://localhost:1313/vfx/</loc>
   </url>
 </urlset>

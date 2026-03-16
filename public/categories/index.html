@@ -192,6 +192,19 @@
 				<div class="col-md-6">
 					<article class="blog-post">
 
+						<a class="post-title" href="http://localhost:1313/categories/workshop/">Workshop
+							
+						</a>
+						<p>
+							
+						</p>
+						<a href="http://localhost:1313/categories/workshop/" class="btn btn-main">Read More</a>
+					</article>
+				</div>
+				
+				<div class="col-md-6">
+					<article class="blog-post">
+
 						<a class="post-title" href="http://localhost:1313/categories/interview/">Interview
 							
 						</a>
@@ -212,19 +225,6 @@
 							
 						</p>
 						<a href="http://localhost:1313/categories/review/" class="btn btn-main">Read More</a>
-					</article>
-				</div>
-				
-				<div class="col-md-6">
-					<article class="blog-post">
-
-						<a class="post-title" href="http://localhost:1313/categories/workshop/">Workshop
-							
-						</a>
-						<p>
-							
-						</p>
-						<a href="http://localhost:1313/categories/workshop/" class="btn btn-main">Read More</a>
 					</article>
 				</div>
 				
@@ -269,6 +269,34 @@
 </footer>
 
 <script src="http://localhost:1313/js/load-photoswipe.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var contactForms = document.querySelectorAll('form[name="contact"]');
+
+    contactForms.forEach(function (form) {
+      var warning = form.querySelector('[data-contact-form-warning]');
+
+      form.addEventListener('submit', function (event) {
+        var recaptchaResponse = form.querySelector('textarea[name="g-recaptcha-response"]');
+        var hasCaptcha = recaptchaResponse && recaptchaResponse.value.trim().length > 0;
+
+        if (!hasCaptcha) {
+          event.preventDefault();
+
+          if (warning) {
+            warning.hidden = false;
+          }
+        }
+      });
+
+      form.addEventListener('input', function () {
+        if (warning) {
+          warning.hidden = true;
+        }
+      });
+    });
+  });
+</script>
 
 
 
