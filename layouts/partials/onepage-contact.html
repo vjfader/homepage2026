@@ -11,7 +11,8 @@
     <div class="row">
       <div class="col-md-6 col-sm-12">
         <div class="block">
-          <form name="contact" method="POST" netlify>
+          <form name="contact" method="POST" action="/thanks/" netlify data-netlify="true">
+            <input type="hidden" name="form-name" value="contact">
             <div class="form-group">
               <input type="text" name="name" class="form-control" placeholder="{{ .form.name }}">
             </div>
@@ -25,6 +26,7 @@
               <textarea class="form-control" name="message" rows="5" placeholder="{{ .form.message }}"></textarea>
             </div>
             <button type="submit" class="btn btn-main">{{ .form.button }}</button>
+            <p class="contact-form-warning" data-contact-form-warning hidden>Please complete the CAPTCHA before sending your message.</p>
             <br><br>
             <div data-netlify-recaptcha></div>
           </form>

@@ -192,13 +192,26 @@
 				<div class="col-md-6">
 					<article class="blog-post">
 
-						<a class="post-title" href="http://localhost:1313/tags/programming/">Programming
+						<a class="post-title" href="http://localhost:1313/tags/magazine/">Magazine
 							
 						</a>
 						<p>
 							
 						</p>
-						<a href="http://localhost:1313/tags/programming/" class="btn btn-main">Read More</a>
+						<a href="http://localhost:1313/tags/magazine/" class="btn btn-main">Read More</a>
+					</article>
+				</div>
+				
+				<div class="col-md-6">
+					<article class="blog-post">
+
+						<a class="post-title" href="http://localhost:1313/tags/music-festival/">Music Festival
+							
+						</a>
+						<p>
+							
+						</p>
+						<a href="http://localhost:1313/tags/music-festival/" class="btn btn-main">Read More</a>
 					</article>
 				</div>
 				
@@ -218,39 +231,26 @@
 				<div class="col-md-6">
 					<article class="blog-post">
 
-						<a class="post-title" href="http://localhost:1313/tags/tutorial/">Tutorial
+						<a class="post-title" href="http://localhost:1313/tags/hardware-mixer/">Hardware Mixer
 							
 						</a>
 						<p>
 							
 						</p>
-						<a href="http://localhost:1313/tags/tutorial/" class="btn btn-main">Read More</a>
+						<a href="http://localhost:1313/tags/hardware-mixer/" class="btn btn-main">Read More</a>
 					</article>
 				</div>
 				
 				<div class="col-md-6">
 					<article class="blog-post">
 
-						<a class="post-title" href="http://localhost:1313/tags/unity/">Unity
+						<a class="post-title" href="http://localhost:1313/tags/hardware-review/">Hardware Review
 							
 						</a>
 						<p>
 							
 						</p>
-						<a href="http://localhost:1313/tags/unity/" class="btn btn-main">Read More</a>
-					</article>
-				</div>
-				
-				<div class="col-md-6">
-					<article class="blog-post">
-
-						<a class="post-title" href="http://localhost:1313/tags/unity-3d/">Unity 3d
-							
-						</a>
-						<p>
-							
-						</p>
-						<a href="http://localhost:1313/tags/unity-3d/" class="btn btn-main">Read More</a>
+						<a href="http://localhost:1313/tags/hardware-review/" class="btn btn-main">Read More</a>
 					</article>
 				</div>
 				
@@ -334,6 +334,34 @@
 </footer>
 
 <script src="http://localhost:1313/js/load-photoswipe.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var contactForms = document.querySelectorAll('form[name="contact"]');
+
+    contactForms.forEach(function (form) {
+      var warning = form.querySelector('[data-contact-form-warning]');
+
+      form.addEventListener('submit', function (event) {
+        var recaptchaResponse = form.querySelector('textarea[name="g-recaptcha-response"]');
+        var hasCaptcha = recaptchaResponse && recaptchaResponse.value.trim().length > 0;
+
+        if (!hasCaptcha) {
+          event.preventDefault();
+
+          if (warning) {
+            warning.hidden = false;
+          }
+        }
+      });
+
+      form.addEventListener('input', function () {
+        if (warning) {
+          warning.hidden = true;
+        }
+      });
+    });
+  });
+</script>
 
 
 

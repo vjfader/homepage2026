@@ -372,7 +372,8 @@
     <div class="row">
       <div class="col-md-6 col-sm-12">
         <div class="block">
-          <form name="contact" method="POST" netlify>
+          <form name="contact" method="POST" action="http://localhost:1313/thanks/" netlify data-netlify="true">
+            <input type="hidden" name="form-name" value="contact">
             <div class="form-group">
               <input type="text" name="name" class="form-control" placeholder="Your name">
             </div>
@@ -386,6 +387,7 @@
               <textarea class="form-control" name="message" rows="5" placeholder="Your message"></textarea>
             </div>
             <button type="submit" class="btn btn-main">Send message</button>
+            <p class="contact-form-warning" data-contact-form-warning hidden>Please complete the CAPTCHA before sending your message.</p>
             <br><br>
             <div data-netlify-recaptcha></div>
           </form>
@@ -458,6 +460,34 @@
 </footer>
 
 <script src="http://localhost:1313/js/load-photoswipe.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var contactForms = document.querySelectorAll('form[name="contact"]');
+
+    contactForms.forEach(function (form) {
+      var warning = form.querySelector('[data-contact-form-warning]');
+
+      form.addEventListener('submit', function (event) {
+        var recaptchaResponse = form.querySelector('textarea[name="g-recaptcha-response"]');
+        var hasCaptcha = recaptchaResponse && recaptchaResponse.value.trim().length > 0;
+
+        if (!hasCaptcha) {
+          event.preventDefault();
+
+          if (warning) {
+            warning.hidden = false;
+          }
+        }
+      });
+
+      form.addEventListener('input', function () {
+        if (warning) {
+          warning.hidden = true;
+        }
+      });
+    });
+  });
+</script>
 
 
 </body>
