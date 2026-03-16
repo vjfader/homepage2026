@@ -1,0 +1,40 @@
+<!-- Start of Open Graph -->
+{{ $ogTitle := .Title }}
+{{ if .IsHome }}
+  {{ $ogTitle = printf "%s | Berlin VFX Artist, Music Visualization, Stage Design" .Site.Params.author }}
+{{ else }}
+  {{ $ogTitle = printf "%s | %s" .Title .Site.Title }}
+{{ end }}
+{{ $ogDescription := .Site.Params.seo.description }}
+{{ with .Description }}
+  {{ $ogDescription = . }}
+{{ else }}
+  {{ if and .IsPage .Summary }}
+    {{ $ogDescription = .Summary | plainify | truncate 160 }}
+  {{ end }}
+{{ end }}
+{{ $ogImage := .Site.Params.seo.image | absURL }}
+{{ with .Params.thumbnailImage }}
+  {{ $ogImage = . | absURL }}
+{{ end }}
+{{ $ogType := .Site.Params.seo.type }}
+{{ if .IsPage }}
+  {{ $ogType = "article" }}
+{{ end }}
+{{ with .Params.seoType }}
+  {{ $ogType = . }}
+{{ end }}
+<meta property="og:title" content="{{ $ogTitle }}">
+<meta property="og:type" content="{{ $ogType }}">
+{{ if eq $ogType "article" }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02" }}">
+{{ end }}
+<meta property="og:description" content="{{ $ogDescription }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:image:alt" content="{{ $ogTitle }}">
+
+{{ range .Params.tags }}
+<meta property="og:tags" content="{{ . }}">
+{{ end }}

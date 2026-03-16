@@ -1,0 +1,40 @@
+enable: true
+title: Experience Speaks For Itself
+paragraph: >
+  Fader gained experience from countless music festivals and concert shows all over the world. A skilled VJ can take music performance to the next level, by introducing visual landscapes and stories to the viewer.
+
+numbers:
+  - icon: ion-ios-chatboxes-outline
+    counter: 4
+    text: Spoken Languages
+  - icon: ion-ios-photos-outline
+    counter: 100
+    text: Over a hundred Shows
+  - icon: ion-ios-compose-outline
+    counter: 16
+    text: Years of Experience
+  - icon: ion-plane
+    counter: 14
+    text: Countries Traveled
+
+people:
+  - text: >
+      Exclusive B.O.B. magazine interview.
+    image: img/interview/Photo-11.09.17-11-33-17-320x240.jpg
+    name: B.O.B. Interior Design
+    role: South Korea
+  - text: >
+      Exclusive B.O.B. magazine interview.
+    image: img/interview/Photo-11.09.17-12-27-29-320x240.jpg
+    name: B.O.B. Interior Design
+    role: South Korea
+  - text: >
+      Exclusive B.O.B. magazine interview.
+    image: img/interview/Photo-11.09.17-12-27-48-320x240.jpg
+    name: B.O.B. Interior Design
+    role: South Korea
+  - text: >
+      Exclusive B.O.B. magazine interview.
+    image: img/interview/Photo-11.09.17-11-16-41-small-320x240.jpg
+    name: B.O.B. Interior Design
+    role: South Korea

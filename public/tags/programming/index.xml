@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Fader</title>
+    <link>http://localhost:1313/tags/programming/</link>
+    <description>Recent content in Programming on Fader</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 Oct 2018 16:41:38 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Workshop] Unity 3D for Artists</title>
+      <link>http://localhost:1313/blog/-workshop-unity-3d-for-artists/</link>
+      <pubDate>Wed, 31 Oct 2018 16:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/blog/-workshop-unity-3d-for-artists/</guid>
+      <description>&lt;p&gt;I have given comprehensive Unity for Artists workshops in Berlin, London, Cape Town and Amsterdam. This workshop is aimed for non-programmers and artists to start using Unity as their tool for creating real-time interactive and generative visuals.&lt;/p&gt;&#xA;&lt;h3&gt;Description&lt;/h3&gt;&#xA;&lt;p&gt;Unity 3D for Artists is an intensive 4 day workshop is designed for visual artists to start creating interactive and generative visuals using the Unity Game Engine. Taught by experienced VJ and media artist Fader, in this intimate hands-on workshop you will learn to create real-time visual environments on your computer. At the completion you will have a good understanding of the Unity workflow, code environment, and basic knowledge of C# programming.&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

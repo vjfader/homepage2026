@@ -1,0 +1,99 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name ="theme-color" content="#232633">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ $seoTitle := .Title }}
+{{ if .IsHome }}
+  {{ $seoTitle = printf "%s | Berlin VFX Artist, Music Visualization, Stage Design" .Site.Params.author }}
+{{ else }}
+  {{ $seoTitle = printf "%s | %s" .Title .Site.Title }}
+{{ end }}
+{{ $seoDescription := .Site.Params.seo.description }}
+{{ with .Description }}
+  {{ $seoDescription = . }}
+{{ else }}
+  {{ if and .IsPage .Summary }}
+    {{ $seoDescription = .Summary | plainify | truncate 160 }}
+  {{ end }}
+{{ end }}
+{{ $seoImage := .Site.Params.seo.image | absURL }}
+{{ with .Params.thumbnailImage }}
+  {{ $seoImage = . | absURL }}
+{{ end }}
+{{ $seoKeywords := delimit .Site.Params.keywords ", " }}
+{{ with .Params.seoKeywords }}
+  {{ $seoKeywords = delimit . ", " }}
+{{ end }}
+<meta name="description" content="{{ $seoDescription }}">
+<meta name="keywords" content="{{ $seoKeywords }}">
+<!-- robots -->
+<!-- you may configure it in the front matter of the page or in site params -->
+{{ if or (isset .Params "robots") (isset .Site.Params "robots") }}
+<meta name="robots" content="{{ with .Params.robots }}{{ . }}{{ else }}{{ .Site.Params.robots }}{{ end }}">
+{{ end }}
+ 
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory
+     or place appropriate <link .../> etc in favicon.html partial -->
+{{ partial "favicon.html" . }}
+ 
+<title>{{ $seoTitle }}</title>
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="author" content="{{ .Site.Params.author }}">
+{{ partial "opengraph.html" . }}
+{{ hugo.Generator }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $seoTitle }}">
+<meta name="twitter:description" content="{{ $seoDescription }}">
+<meta name="twitter:image" content="{{ $seoImage }}">
+ 
+<!-- CSS -->
+<link rel="manifest" href="{{ .Site.BaseURL }}manifest.json" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/owl.carousel.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/bootstrap.min.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/font-awesome.min.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/airspace-local-fonts.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/airspace.css?v=20260316a" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css?v=20260316a" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/ionicons.min.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/animate.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/responsive.css" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}css/syntax.css" />
+ 
+<!-- Js-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="{{ .Site.BaseURL }}js/bootstrap.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/owl.carousel.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/plugins.js"></script>
+<script src="{{ .Site.BaseURL }}js/min/waypoints.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/jquery.counterup.js"></script>
+ 
+<!-- <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script> -->
+ 
+<script src="{{ .Site.BaseURL }}js/main.js"></script>
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1686629-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+ 
+  gtag('config', 'UA-1686629-2');
+</script>
+ 
+<!--
+/*
+ * Airspace
+ * Ported to Hugo by Giacomo Mariani
+ * https://github.com/karju-dev/airspace-hugo
+ * Based on the original Jakyll porting by Andrew Lee
+ * https://github.com/luminousrubyist/airspace-jekyll
+ * Designed and Developed by ThemeFisher
+ * https://themefisher.com/
+ *
+ */
+-->

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Fader</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Fader</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 31 Oct 2018 16:41:38 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Audio Visual</title>
+      <link>http://localhost:1313/tags/audio-visual/</link>
+      <pubDate>Wed, 31 Oct 2018 16:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/audio-visual/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Game Engine</title>
+      <link>http://localhost:1313/tags/game-engine/</link>
+      <pubDate>Wed, 31 Oct 2018 16:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/game-engine/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Generative Art</title>
+      <link>http://localhost:1313/tags/generative-art/</link>
+      <pubDate>Wed, 31 Oct 2018 16:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/generative-art/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interactive</title>
+      <link>http://localhost:1313/tags/interactive/</link>
+      <pubDate>Wed, 31 Oct 2018 16:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/interactive/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Learning</title>
+      <link>http://localhost:1313/tags/learning/</link>
+      <pubDate>Wed, 31 Oct 2018 16:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>http://localhost:1313/tags/programming/</link>
+      <pubDate>Wed, 31 Oct 2018 16:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tutorial</title>
+      <link>http://localhost:1313/tags/tutorial/</link>
+      <pubDate>Wed, 31 Oct 2018 16:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Unity</title>
+      <link>http://localhost:1313/tags/unity/</link>
+      <pubDate>Wed, 31 Oct 2018 16:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/unity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Unity 3d</title>
+      <link>http://localhost:1313/tags/unity-3d/</link>
+      <pubDate>Wed, 31 Oct 2018 16:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/unity-3d/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Edm</title>
+      <link>http://localhost:1313/tags/edm/</link>
+      <pubDate>Wed, 31 Oct 2018 10:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/edm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Festival</title>
+      <link>http://localhost:1313/tags/festival/</link>
+      <pubDate>Wed, 31 Oct 2018 10:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/festival/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interview</title>
+      <link>http://localhost:1313/tags/interview/</link>
+      <pubDate>Wed, 31 Oct 2018 10:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/interview/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Magazine</title>
+      <link>http://localhost:1313/tags/magazine/</link>
+      <pubDate>Wed, 31 Oct 2018 10:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/magazine/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Music Festival</title>
+      <link>http://localhost:1313/tags/music-festival/</link>
+      <pubDate>Wed, 31 Oct 2018 10:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/music-festival/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Stage Design</title>
+      <link>http://localhost:1313/tags/stage-design/</link>
+      <pubDate>Wed, 31 Oct 2018 10:41:38 +0100</pubDate>
+      <guid>http://localhost:1313/tags/stage-design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hardware Mixer</title>
+      <link>http://localhost:1313/tags/hardware-mixer/</link>
+      <pubDate>Tue, 16 Jan 2018 17:56:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/hardware-mixer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hardware Review</title>
+      <link>http://localhost:1313/tags/hardware-review/</link>
+      <pubDate>Tue, 16 Jan 2018 17:56:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/hardware-review/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Video Blog</title>
+      <link>http://localhost:1313/tags/video-blog/</link>
+      <pubDate>Tue, 16 Jan 2018 17:56:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/video-blog/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Video Mixer</title>
+      <link>http://localhost:1313/tags/video-mixer/</link>
+      <pubDate>Tue, 16 Jan 2018 17:56:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/video-mixer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Video Mixing</title>
+      <link>http://localhost:1313/tags/video-mixing/</link>
+      <pubDate>Tue, 16 Jan 2018 17:56:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/video-mixing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vj Hardware</title>
+      <link>http://localhost:1313/tags/vj-hardware/</link>
+      <pubDate>Tue, 16 Jan 2018 17:56:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/vj-hardware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vjing</title>
+      <link>http://localhost:1313/tags/vjing/</link>
+      <pubDate>Tue, 16 Jan 2018 17:56:00 +0100</pubDate>
+      <guid>http://localhost:1313/tags/vjing/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

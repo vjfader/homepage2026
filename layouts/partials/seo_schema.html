@@ -1,0 +1,89 @@
+<script type="application/ld+json">
+{{ $description := .Site.Params.seo.description }}
+{{ with .Description }}
+  {{ $description = . }}
+{{ else }}
+  {{ if and .IsPage .Summary }}
+    {{ $description = .Summary | plainify | truncate 160 }}
+  {{ end }}
+{{ end }}
+{{ $isServicePage := or (eq .Params.id "vfx-page") (eq .Params.id "stage-design-page") }}
+{{ if .IsHome }}
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ .Site.Params.author }}",
+  "alternateName": "Fader",
+  "url": "{{ .Site.BaseURL }}",
+  "image": "{{ .Site.Params.seo.image | absURL }}",
+  "jobTitle": "VFX Artist, Music Visualization Artist, and Stage Designer",
+  "description": "{{ $description }}",
+  "homeLocation": {
+    "@type": "Place",
+    "name": "{{ .Site.Params.location }}"
+  },
+  "sameAs": [
+    "{{ .Site.Params.social.youtube }}",
+    "{{ .Site.Params.social.instagram }}",
+    "{{ .Site.Params.social.linkedin }}"
+  ],
+  "knowsAbout": [
+    {{ range $index, $keyword := .Site.Params.keywords }}{{ if $index }}, {{ end }}"{{ $keyword }}"{{ end }}
+  ]
+}
+{{ else if $isServicePage }}
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{ .Title }}",
+  "url": "{{ .Permalink }}",
+  "description": "{{ $description }}",
+  "about": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}",
+    "alternateName": "Fader",
+    "jobTitle": "VFX Artist, Music Visualization Artist, and Stage Designer"
+  },
+  "creator": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "{{ .Site.Params.seo.image | absURL }}"
+  }
+}
+{{ else if .IsPage }}
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  "headline": "{{ .Title }}",
+  "description": "{{ $description }}",
+  "inLanguage": "en-US",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}"
+  },
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "url": "{{ .Permalink }}",
+  "wordCount": "{{ .WordCount }}"
+}
+{{ else }}
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{ .Title }}",
+  "url": "{{ .Permalink }}",
+  "description": "{{ $description }}"
+}
+{{ end }}
+</script>
