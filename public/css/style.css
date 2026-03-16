@@ -1,0 +1,637 @@
+/*
+ * This css file includes styles added in the jekyll port of this theme.
+ * To find the original style.css that ships with Airspace, read airspace.css
+ *
+ */
+
+ .italic {
+   font-style: italic;
+ }
+
+ .bold {
+   font-weight: bold;
+ }
+
+ .center-text {
+   text-align: center;
+ }
+
+.post-area {
+  padding: 40px;
+  width: 100%;
+  min-height: 150px;
+  background-color: #333;
+  border-bottom: 1px dotted #ddd;
+}
+
+.post-area a:link, .post-area a:visited {
+  font-size: 30px;
+  color: #333;
+}
+
+.post-area a:hover {
+  color: #0D0017;
+}
+
+#slider {
+  background-image: url("../img/vjfader-homepage-header-1.jpg") !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+/* One-page readability overrides */
+:root {
+  --dark-theme-link: #8ab4f8;
+  --dark-theme-link-hover: #aecbfa;
+  --onepage-text: #dfe7ff;
+  --onepage-heading: #f3f6ff;
+  --onepage-about-bg: linear-gradient(180deg, #202430 0%, #252b39 100%);
+  --onepage-service-bg: linear-gradient(180deg, #171c27 0%, #1e2431 100%);
+  --onepage-vfx-bg: linear-gradient(135deg, #10182c 0%, #223455 48%, #171d28 100%);
+  --onepage-stage-bg: linear-gradient(135deg, #231a18 0%, #4b3028 48%, #1d1a1f 100%);
+  --onepage-clients-bg: linear-gradient(180deg, #1a1f2b 0%, #232938 100%);
+  --onepage-contact-bg: linear-gradient(180deg, #202430 0%, #161b24 100%);
+}
+
+#about,
+#vfx-music-visualization,
+#stage-design,
+#contact {
+  color: #DEEDED !important;
+}
+
+.onepage-dark-section {
+  background-color: #232633 !important;
+}
+
+#about {
+  background: var(--onepage-about-bg) !important;
+}
+
+#service {
+  background: var(--onepage-service-bg) !important;
+  color: var(--onepage-text) !important;
+  padding: 92px 0 72px;
+}
+
+#vfx-music-visualization {
+  background: var(--onepage-vfx-bg) !important;
+  padding-bottom: 88px;
+}
+
+#stage-design {
+  background: var(--onepage-stage-bg) !important;
+  padding-bottom: 88px;
+}
+
+#clients-logo-section {
+  background: var(--onepage-clients-bg) !important;
+  color: var(--onepage-text) !important;
+  padding: 78px 0;
+}
+
+#contact {
+  background: var(--onepage-contact-bg) !important;
+}
+
+.onepage-light-text,
+.onepage-light-text p,
+.onepage-light-text li,
+.onepage-light-text span,
+.onepage-light-text strong,
+.onepage-light-text em {
+  color: var(--onepage-text) !important;
+}
+
+.onepage-light-heading {
+  color: var(--onepage-heading) !important;
+}
+
+.onepage-dark-section .section-title p,
+.onepage-dark-section .block p,
+.onepage-dark-section .onepage-richtext p,
+.onepage-dark-section .address-block li,
+.onepage-dark-section .onepage-about-links div,
+.onepage-dark-section .onepage-placeholder-list li {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.onepage-dark-section .section-title p,
+.onepage-dark-section .block p,
+.onepage-dark-section .onepage-richtext p {
+  margin: 0 0 18px;
+}
+
+.onepage-dark-section .onepage-richtext p:last-child,
+.onepage-dark-section .block p:last-child {
+  margin-bottom: 0;
+}
+
+#about h2,
+#about h4,
+#vfx-music-visualization h2,
+#vfx-music-visualization h4,
+#stage-design h2,
+#stage-design h4,
+#contact h2,
+#contact h4 {
+  color: #E0E3F7 !important;
+}
+
+#about p,
+#about li,
+#about a,
+#vfx-music-visualization p,
+#vfx-music-visualization li,
+#vfx-music-visualization a,
+#stage-design p,
+#stage-design li,
+#stage-design a,
+#contact p,
+#contact li,
+#contact .address-block li,
+#contact .address-block li a {
+  color: #DEEDED !important;
+}
+
+#stage-design .btn-main,
+#contact .btn-main {
+  background: #655E7A;
+  color: #fff !important;
+}
+
+#vfx-music-visualization .onepage-placeholder-list {
+  color: #DEEDED !important;
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+#vfx-music-visualization .onepage-placeholder-list li {
+  margin-bottom: 8px;
+}
+
+#about .section-title h2,
+#vfx-music-visualization .section-title h2,
+#stage-design .section-title h2,
+#contact .section-title h2,
+#contact .block h2,
+#about .block h2,
+#vfx-music-visualization .block h2,
+#stage-design .block h2 {
+  color: #E0E3F7 !important;
+}
+
+#about .section-title p,
+#about .block p,
+#vfx-music-visualization .section-title p,
+#vfx-music-visualization .block p,
+#stage-design .section-title p,
+#stage-design .block p,
+#contact .section-title p,
+#contact .block p,
+#contact .address-block li,
+#contact .address-block li a,
+#about .block li,
+#vfx-music-visualization .block li,
+#stage-design .block li {
+  color: #DEEDED !important;
+}
+
+#contact .social-icons i,
+#contact .social-icons a,
+#about .social-icons i,
+#vfx-music-visualization .social-icons i,
+#stage-design .social-icons i {
+  color: #E0E3F7 !important;
+}
+
+#about a,
+#vfx-music-visualization a,
+#stage-design a,
+#contact a {
+  color: var(--dark-theme-link) !important;
+}
+
+#about a:hover,
+#vfx-music-visualization a:hover,
+#stage-design a:hover,
+#contact a:hover,
+#about a:focus,
+#vfx-music-visualization a:focus,
+#stage-design a:focus,
+#contact a:focus {
+  color: var(--dark-theme-link-hover) !important;
+}
+
+#contact .social-icons a,
+#contact .social-icons a i,
+#about .social-icons a,
+#about .social-icons a i,
+#vfx-music-visualization .social-icons a,
+#vfx-music-visualization .social-icons a i,
+#stage-design .social-icons a,
+#stage-design .social-icons a i {
+  color: var(--dark-theme-link) !important;
+}
+
+#about .block,
+#vfx-music-visualization .block,
+#stage-design .block,
+#contact .block,
+#service .service-item,
+#clients-logo-section .block,
+#about .section-title,
+#vfx-music-visualization .section-title,
+#stage-design .section-title,
+#contact .section-title {
+  color: #DEEDED !important;
+}
+
+#service .section-title p,
+#service .service-item p,
+#service .service-item h4,
+#clients-logo-section p,
+#clients-logo-section li,
+#clients-logo-section a,
+#clients-logo-section h2 {
+  color: var(--onepage-text) !important;
+}
+
+#service .service-item,
+#clients-logo-section .block {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+}
+
+#service .service-item {
+  min-height: 260px;
+  margin-bottom: 30px;
+}
+
+#service .service-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#service .service-grid-item {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+#service .service-grid-item .service-item {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0;
+}
+
+#service .service-item i {
+  color: #aecbfa;
+}
+
+@media (max-width: 991px) {
+  #service .service-item {
+    min-height: 0;
+  }
+}
+
+#clients-logo-section .clients-logo-img {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.onepage-richtext,
+.onepage-richtext p,
+.onepage-richtext li,
+.onepage-richtext strong,
+.onepage-richtext em {
+  color: #DEEDED !important;
+}
+
+.onepage-copy p,
+.onepage-copy ul,
+.onepage-copy ol {
+  margin-top: 0 !important;
+  margin-bottom: 32px !important;
+}
+
+.onepage-copy p:last-child,
+.onepage-copy ul:last-child,
+.onepage-copy ol:last-child {
+  margin-bottom: 0 !important;
+}
+
+.onepage-copy li {
+  margin-bottom: 4px !important;
+}
+
+.onepage-about-intro p:last-child {
+  margin-bottom: 4px !important;
+}
+
+.onepage-about-body {
+  margin-top: 0 !important;
+}
+
+#about .section-title {
+  margin-bottom: 12px !important;
+}
+
+.onepage-richtext a {
+  color: var(--dark-theme-link) !important;
+}
+
+.onepage-richtext a:hover,
+.onepage-richtext a:focus {
+  color: var(--dark-theme-link-hover) !important;
+}
+
+.onepage-about-links {
+  margin-top: 32px;
+  line-height: 1.3;
+}
+
+.onepage-about-links div {
+  margin: 0;
+}
+
+#contact input,
+#contact textarea,
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: #232633;
+}
+
+@media (max-width: 767px) {
+  #about .block img {
+    width: 100%;
+    margin: 0 !important;
+    display: block;
+  }
+
+  #about .col-md-6.col-sm-12:last-child .block {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.subpage-hero {
+  padding: 120px 0 90px;
+  position: relative;
+}
+
+.subpage-hero-vfx {
+  background: linear-gradient(135deg, #10182c 0%, #24385d 45%, #151821 100%);
+}
+
+.subpage-hero-stage {
+  background: linear-gradient(135deg, #241816 0%, #5a342a 48%, #1a1619 100%);
+}
+
+.subpage-hero-stage-image {
+  background:
+    linear-gradient(rgba(26, 16, 15, 0.55), rgba(26, 16, 15, 0.72)),
+    url("../img/portfolio/VJFader-IntroShangHai2016-mainstage3-800x403.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.subpage-hero-copy {
+  color: #f3f6ff;
+}
+
+.subpage-eyebrow {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: rgba(243, 246, 255, 0.72);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.subpage-hero-copy h1 {
+  margin: 0 0 24px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 52px;
+  line-height: 1.12;
+  font-weight: 300;
+}
+
+.subpage-hero-copy p {
+  max-width: 760px;
+  margin: 0;
+  color: #dfe7ff;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.subpage-stats-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.subpage-stat-card,
+.subpage-copy-card,
+.subpage-side-card,
+.subpage-capability-card,
+.subpage-stage-notes {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.subpage-stat-card {
+  padding: 18px 20px;
+  color: #f3f6ff;
+}
+
+.subpage-stat-card strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.subpage-stat-card span {
+  color: #dfe7ff;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.subpage-panel,
+.subpage-video-band,
+.subpage-capabilities,
+.subpage-stage-showcase,
+.subpage-stage-process {
+  padding: 90px 0;
+}
+
+.subpage-panel-dark {
+  background: #181d28;
+}
+
+.subpage-panel-vfx-detail {
+  background: #1f2531;
+}
+
+.subpage-panel-stage-detail {
+  background: #1c1716;
+}
+
+.subpage-copy-card,
+.subpage-side-card {
+  padding: 32px;
+  min-height: 100%;
+}
+
+.subpage-copy-card h2,
+.subpage-side-card h3,
+.subpage-stage-notes h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #f3f6ff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.subpage-copy-card h3,
+.subpage-capability-card h2,
+.subpage-capability-card h3,
+.subpage-capability-card h4,
+.subpage-panel h2,
+.subpage-panel h3,
+.subpage-panel h4,
+.subpage-capabilities h2,
+.subpage-capabilities h3,
+.subpage-capabilities h4 {
+  color: #f3f6ff !important;
+}
+
+.subpage-copy-card p,
+.subpage-side-card li,
+.subpage-stage-notes p {
+  color: #dfe7ff;
+  line-height: 1.8;
+}
+
+.subpage-panel p,
+.subpage-panel li,
+.subpage-capabilities p,
+.subpage-capabilities li,
+.subpage-stage-process p,
+.subpage-stage-process li,
+.subpage-stage-showcase p,
+.subpage-stage-showcase li {
+  color: #dfe7ff !important;
+}
+
+.subpage-side-card ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.subpage-video-band {
+  background: #11151d;
+}
+
+.subpage-video-frame iframe {
+  display: block;
+  width: 100%;
+}
+
+.subpage-capability-card {
+  min-height: 220px;
+  padding: 28px 24px;
+  color: #dfe7ff;
+}
+
+.subpage-capability-card i {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 42px;
+  color: #8ab4f8;
+}
+
+.subpage-capability-card h4 {
+  color: #f3f6ff;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.subpage-capability-card p {
+  color: #dfe7ff;
+  line-height: 1.8;
+}
+
+.subpage-stage-showcase {
+  background: #181513;
+}
+
+.subpage-stage-image img {
+  display: block;
+  width: 100%;
+}
+
+.subpage-stage-image iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.subpage-stage-notes {
+  padding: 34px;
+  min-height: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 4px solid rgba(216, 132, 96, 0.82);
+}
+
+.subpage-stage-process {
+  background: #232633;
+}
+
+.subpage-capability-card-stage i {
+  color: #d88460;
+}
+
+.subpage-hero-stage .subpage-hero-copy p,
+.subpage-stage-showcase p,
+.subpage-stage-process p,
+.subpage-stage-process li,
+.subpage-panel-stage-detail p,
+.subpage-panel-stage-detail li,
+.subpage-stage-notes p,
+.subpage-stage-notes li {
+  color: #dfe7ff !important;
+}
+
+.subpage-hero-stage .subpage-hero-copy h1,
+.subpage-stage-showcase h2,
+.subpage-stage-showcase h3,
+.subpage-stage-showcase h4,
+.subpage-stage-process h2,
+.subpage-stage-process h3,
+.subpage-stage-process h4,
+.subpage-panel-stage-detail h2,
+.subpage-panel-stage-detail h3,
+.subpage-panel-stage-detail h4 {
+  color: #f3f6ff !important;
+}
+
+@media (max-width: 991px) {
+  .subpage-hero-copy h1 {
+    font-size: 40px;
+  }
+
+  .subpage-stats-grid,
+  .subpage-copy-card,
+  .subpage-side-card,
+  .subpage-stage-notes,
+  .subpage-capability-card {
+    margin-bottom: 24px;
+  }
+}

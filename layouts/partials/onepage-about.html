@@ -1,0 +1,49 @@
+<section id="about" class="onepage-dark-section" style="background-color:#232633;color:#dfe7ff;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="block">
+          <div class="section-title onepage-light-text" style="color:#dfe7ff;margin-bottom:32px;">
+            <h2 class="onepage-light-heading" style="color:#f3f6ff;">{{ .Site.Params.wrapper.title }}</h2>
+            <div class="onepage-richtext onepage-copy onepage-about-intro" style="color:#dfe7ff;font-family:'Roboto',sans-serif;font-size:16px;line-height:1.4;font-weight:300;">{{ .Site.Params.wrapper.italic | markdownify }}</div>
+          </div>
+          <div class="onepage-richtext onepage-light-text onepage-copy onepage-about-body" style="color:#dfe7ff;font-family:'Roboto',sans-serif;font-size:16px;line-height:1.4;font-weight:300;margin-top:0;margin-bottom:32px;">{{ .Site.Params.wrapper.paragraph | markdownify }}</div>
+          <div class="onepage-about-links onepage-light-text onepage-copy" style="color:#dfe7ff;font-family:'Roboto',sans-serif;font-size:16px;line-height:1.35;font-weight:300;">
+            <div>YouTube: <a href="{{ .Site.Params.social.youtube }}">www.youtube.com/user/vjfader</a></div>
+            <div>Instagram: <a href="{{ .Site.Params.social.instagram }}">www.instagram.com/vjfader</a></div>
+            <div>LinkedIn: <a href="{{ .Site.Params.social.linkedin }}">www.linkedin.com/in/jamescui-6466051</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="block">
+          <img src="{{ .Site.BaseURL }}img/Fader_profile02_700.jpg" alt="Fader profile photo">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ if and .Site.Data.service .Site.Data.service.enable }}
+<section id="service">
+  <div class="container">
+    <div class="row">
+      <div class="section-title onepage-light-text" style="color:#dfe7ff;margin-bottom:32px;">
+        <h2 class="onepage-light-heading" style="color:#f3f6ff;">{{ .Site.Data.service.title }}</h2>
+        <p class="onepage-light-text onepage-copy" style="color:#dfe7ff;font-family:'Roboto',sans-serif;font-size:16px;line-height:1.4;font-weight:300;">{{ .Site.Data.service.subtitle }}</p>
+      </div>
+    </div>
+    <div class="row service-grid">
+      {{ range .Site.Data.service.content }}
+      <div class="col-sm-6 col-md-3 service-grid-item">
+        <div class="service-item">
+          <i class="{{ .icon }}"></i>
+          <h4 class="onepage-light-heading" style="color:#f3f6ff;">{{ .name }}</h4>
+          <p class="onepage-light-text onepage-copy" style="color:#dfe7ff;font-family:'Roboto',sans-serif;font-size:16px;line-height:1.4;font-weight:300;">{{ .text }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

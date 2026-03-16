@@ -1,0 +1,15 @@
+<section id="workfeature">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-6">
+      <h2 class="text-uppercase">{{ .Site.Params.workfeature.title }}</h2>
+      <p>
+      	{{ .Site.Params.workfeature.content | markdownify }}
+      </p>
+      {{ with .Site.Params.workfeature.button }}
+      	<a href="{{ .url }}" class="btn btn-main">{{ .caption }}</a>
+      {{ end }}
+    </div>
+  </div>
+</div>
+</section>

@@ -1,0 +1,151 @@
+title = "Fader"
+baseURL = "https://www.vjfader.com/"
+languageCode = "en-us"
+theme = "airspace-hugo"
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+canonifyURLs = true
+laxHtmlBlocks = true
+
+description = "James Cui, aka Fader, is a Berlin-based VFX and music visualization artist specializing in Unreal Engine Niagara, audio-reactive visuals, stage design, and live performance visuals."
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+
+[menu]
+
+  [[menu.header]]
+    weight = 2
+    name = "About"
+    url = "/#about"
+  [[menu.header]]
+    weight = 3
+    name = "VFX Music Visualization"
+    url = "/vfx/"
+  [[menu.header]]
+    weight = 4
+    name = "Stage Design"
+    url = "/stage-design/"
+  [[menu.header]]
+    weight = 5
+    name = "Contact"
+    url = "/#contact"
+  [[menu.header]]
+    weight = 1
+    name = "Home"
+    url = "/"
+
+  [[menu.footer]]
+    weight = 1
+    name = "Home"
+    url = "/"
+  [[menu.footer]]
+    weight = 2
+    name = "About"
+    url = "/#about"
+  [[menu.footer]]
+    weight = 3
+    name = "VFX Music Visualization"
+    url = "/vfx/"
+  [[menu.footer]]
+    weight = 4
+    name = "Stage Design"
+    url = "/stage-design/"
+  [[menu.footer]]
+    weight = 5
+    name = "Contact"
+    url = "/#contact"
+
+# The site's parameters
+[params]
+  author = "James Cui"
+  location = "Berlin, Germany"
+  keywords = ["VFX artist", "music visualization", "audio reactive visuals", "Unreal Engine Niagara", "stage design", "live visuals", "Berlin"]
+
+  [params.seo]
+    title = "Fader"
+    titleSuffix = "VFX Music Visualization and Stage Design"
+    description = "James Cui, aka Fader, is a Berlin-based VFX artist and music visualization artist specializing in Unreal Engine Niagara, audio-reactive visuals, stage design, live visuals, and immersive performance experiences."
+    image = "/img/Fader_profile02_700.jpg"
+    type = "website"
+
+  [params.social]
+    youtube = "https://www.youtube.com/user/vjfader"
+    instagram = "https://www.instagram.com/vjfader"
+    linkedin = "https://www.linkedin.com/in/jamescui-6466051"
+
+
+  # If you want to remove the copyright text you need a Themefisher license.
+  # This license is offered with a 50% discount for all Hugo users.
+  # For information see https://github.com/gohugoio/hugoThemes/issues/260
+
+  dateFormat = "6 January 2016"
+
+  # home = "Fader Home"
+
+  [params.slider]
+    enable = true
+    title = "Visuals That Move With Sound"
+    subtitle = "Audio-Reactive Visuals, VFX, and Stage Design for Live Experiences<br/><br/>[↓↓](#about)"
+
+  [params.vfx]
+    title = "VFX Music Visualization"
+    subtitle = "VFX and music visualization artist specializing in real-time, audio-reactive experiences. I work primarily with Unreal Engine's Niagara particle system to create immersive visuals for live music performances, VR experiences, and innovative projects. Over the years, I've visualized everything from EDM and electronic music to experimental sound design-translating creative concepts into dynamic, technically sophisticated content that actually responds to the music."
+    paragraph = "I work well with clients, creative teams, and technical collaborators to turn ideas into clear, production-ready visual experiences. Whether joining an existing team or helping shape a project from the beginning, I bring a collaborative approach, strong communication, and a focus on delivering visuals that support the bigger creative vision. I am open for freelance work and collaboration, and you can reach out through the contact form or through my social media channels."
+
+  [params.wrapper]
+    enable = true
+    title = "Meet Fader"
+    italic = "Since 2022, I've been creating audio-reactive visual experiences using Unreal Engine's Niagara particle system. My work spans live music performances, VR DJ experiences, and experimental sound design-translating audio into dynamic, responsive motion. I've collaborated with teams at TLM Partners and Sensorium to build immersive VR environments where the visuals actually react to the music in real-time. Every project starts with a simple question: how do I make particles dance to the beat?"
+    paragraph = "For over a decade, I've designed visual experiences for major festivals and events-from the Intro Electronic Music Festival in Beijing (2011-2018) to smaller experimental projects across Europe and Asia. I work closely with lighting teams, projection designers, and event producers to create cohesive stage environments. Whether it's video mapping, LED installations, or live VJing, the goal is always the same: craft something that feels alive and connected to the performance happening in front of it."
+  [params.wrapper.button]
+      caption = "Read More"
+      url = "/about"
+
+  [params.blog]
+    enable = true
+    title = "Latest news from Fader"
+    subtitle = "Catch up with Fader, anytime and anywhere"
+
+  [params.feature]
+    enable = true
+    title = "Stage Design for Immersive Live Experiences"
+    content = "The stage can be considered as a fine-art sculpture in the hands of an experienced designer, Fader shapes his vision according to the type of event and audience. The stage can be modern or classic. Regardless of outdoor or indoor, the LED screens, projectors, lasers and lights become the building blocks to a masterpiece."
+  [params.feature.button]
+      caption = "View More"
+      url = "/work"
+
+  [params.workfeature]
+    enable = true
+    title = "A strong concept is the key!"
+    content = "Great stage designs begin with a strong concept. This is the key to creating a strong identity for festival or an event. A central theme that encapsulates the overall feeling and message to the audience wins.<br><br>Click on the button below to view Fader's latest stage design portfolio PDF to see samples of his latest projects.<br><br>"
+  [params.workfeature.button]
+      caption = "View my Stage Design Portfolio PDF"
+      url = "/download/VJFader-StageDesign-Portfolio-2018v1.pdf"
+
+  [params.call]
+    enable = true
+    title = "Together, we will create the most memorable show!"
+    paragraph = "Every show take an entire dedicated team. With extensive planning and execution comes a great show that will stay in the audiences' memories for a long, long time."
+
+  [params.contact]
+    enable = true
+    title = "Get in Touch"
+    subtitle = "If you have an upcoming project or questions about my past work, feel free to write."
+    [params.contact.form]
+      name = "Your name"
+      email = "Your email"
+      subject = "Your subject"
+      message = "Your message"
+      button = "Send message"
+    [params.contact.box]
+      title = "Contact"
+      address = "Berlin, Germany"
+      email = "Email: vjfader@mail.com"
+      phone = "Phone: +49 17680551258‬"
+    [params.contact.gmaps]
+      title = "Where in the World?"

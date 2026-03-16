@@ -1,0 +1,25 @@
+enable: true
+title: My Services
+subtitle: >
+  Fader works across music visualization, stage design, and live visual production-building immersive experiences for concerts, festivals, VR projects, and experimental audiovisual work.
+content:
+
+  - icon: ion-ios-bolt-outline
+    name: VFX Music Visualization
+    text: >
+      Real-time, audio-reactive visual systems created for live music, immersive environments, and performance-led experiences.
+
+  - icon: ion-image
+    name: Stage Design
+    text: >
+      Stage concepts and visual identities designed to support the atmosphere, scale, and flow of a live event.
+
+  - icon: ion-videocamera
+    name: Live Visual Production
+    text: >
+      Video mapping, LED content, VJ workflows, and show visuals developed to feel fully connected to the performance.
+
+  - icon: ion-android-people
+    name: Creative Collaboration
+    text: >
+      A collaborative process with artists, studios, producers, and technical teams to turn ideas into production-ready visual experiences.

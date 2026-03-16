@@ -1,0 +1,55 @@
+<!-- Wrapper Start -->
+{{ partial "slider-about.html" . }}
+<section id="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-sm-12">
+        <div class="block">
+          <div class="section-title">
+            <h2>{{ .Site.Params.wrapper.title }}</h2>
+            <p>{{ .Site.Params.wrapper.italic | markdownify }}</p>
+          </div>
+          <p>{{ .Site.Params.wrapper.paragraph | markdownify }}</p>
+        </br>
+        <!--
+          {{ with .Site.Params.wrapper.button }}
+            <a href="{{ .url }}" class="btn btn-main">{{ .caption }}</a>
+          {{ end }}
+          -->
+          </div>
+      </div><!-- .col-md-7 close -->
+      <div class="col-md-5 col-sm-12">
+        <div class="block" >
+          <br></br><br><br>
+          <img src="../img/Fader_profile02_700.jpg" alt="Fader Profile Photo" >
+        </div>
+      </div><!-- .col-md-5 close -->
+  </div>
+</div>
+</section>
+<section id="service">
+  <div class="container">
+
+    <!-- Intro -->
+    <div class="row">
+      <div class="section-title">
+        <h2>{{ .Site.Data.service.title }}</h2>
+        <p>{{ .Site.Data.service.subtitle }}</p>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="row">
+      {{ range .Site.Data.service.content }}
+      <div class="col-sm-6 col-md-3">
+        <div class="service-item">
+          <i class="{{ .icon }}"></i>
+          <h4>{{ .name }}</h4>
+          <p>{{ .text }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  <br><br><br><br>
+</section>

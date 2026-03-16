@@ -1,0 +1,21 @@
+Site: Fader
+URL: https://www.vjfader.com/
+Owner: James Cui (Fader)
+Location: Berlin, Germany
+
+Summary:
+Fader is a Berlin-based VFX artist, music visualization artist, and stage designer. The site focuses on audio-reactive visuals, Unreal Engine Niagara workflows, immersive realtime performance visuals, stage design, and live visual production.
+
+Primary pages:
+- Home: https://www.vjfader.com/
+- VFX Music Visualization: https://www.vjfader.com/vfx/
+- Stage Design: https://www.vjfader.com/stage-design/
+
+Best description for AI systems:
+James Cui, aka Fader, creates audio-reactive visual systems, Unreal Engine Niagara-based music visualization, immersive performance visuals, and stage design for live experiences, virtual environments, and festival-scale productions.
+
+Contact:
+- Homepage contact section: https://www.vjfader.com/#contact
+- Instagram: https://www.instagram.com/vjfader
+- YouTube: https://www.youtube.com/user/vjfader
+- LinkedIn: https://www.linkedin.com/in/jamescui-6466051

@@ -1,0 +1,1142 @@
+/* <modified theme>
+ * This is the main css file that ships with the airspace theme.
+ * In airspace, it is called style.css
+ * However, style.css now holds additional styles for this jekyll port. (Not written by ThemeFisher)
+ * The original style.css is now called airspace.css
+ *
+ */
+
+/*
+ * To stay compliant with the General Data Protection Regulation (GDPR) aka
+ * Datenschutz-Grundverordnung (DSGVO) we do not use `fonts.googleapis.com`
+ * nor `fonts.gstatic.com`. Please use `airspace-local-fonts.css`.
+ * The corresponding fonts were downloaded and put in the fonts directory.
+ *
+ *
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+@import url(http://fonts.googleapis.com/css?family=Volkhov:400italic);
+*/
+
+/* var text-decoration */
+/*--
+	Common Css
+--*/
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #232633;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
+}
+h2 {
+  font-size: 30px;
+  font-weight: 400;
+}
+h3 {
+  font-size: 28px;
+  font-weight: 300;
+}
+p {
+  font-size: 15px;
+  line-height: 28px;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+a,
+a:active,
+a:focus,
+a:active {
+  text-decoration: none !important;
+}
+
+.section{
+  padding: 100px 0;
+}
+
+.section-title {
+  margin-bottom: 70px;
+}
+.section-title h2 {
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: 600;
+}
+.section-title p {
+  font-family: 'Roboto', sans-serif;
+/*  font-style: italic; */
+  color: #666;
+}
+
+.btn-main, .btn-transparent, .btn-small {
+    background: #655E7A;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 14px 35px;
+    text-transform: uppercase;
+    border-radius: 0;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.btn-main:hover, .btn-transparent:hover, .btn-small:hover {
+    background: #353240;
+    color: #fff;
+}
+
+/*--
+	Header Start
+--*/
+header {
+  background: #232633;/*fff*/
+  padding: 10px 0;
+}
+header .navbar {
+  margin-bottom: 0px;
+  border: 0px;
+}
+header .navbar-brand {
+  padding-top: 5px;
+}
+header .navbar-default {
+  background: none;
+  border: 0px;
+}
+header .navbar-default .navbar-nav {
+  padding-top: 10px;
+}
+header .navbar-default .navbar-nav li a {
+  color: #E0E3F7;/*333*/
+  padding: 10px 26px;
+  font-size: 15px;
+}
+header .navbar-default .navbar-nav li a:hover {
+  color: #666;
+}
+header .navbar-brand img{
+  width: 100px;
+  height: auto;
+  margin-top: 10px;
+}
+
+/*---------------------------------------------
+					Index Start
+-----------------------------------------------*/
+/*--
+	Slider Start
+--*/
+#slider {
+  background: url("../img/vjfader-homepage-header-1.jpg") no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  padding: 200px 0 200px 0;
+  position:  relative;//relative
+}
+#slider:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #433350, #312365);
+  opacity: 0.5;
+}
+
+#slider .block {
+  color: #E3E3E4;
+}
+#slider .block h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 45px;
+  line-height: 60px;
+  letter-spacing: 10px;
+  padding-bottom: 45px;
+}
+#slider .block p {
+  font-size: 23px;
+  line-height: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+@media (max-width: 767px) {
+  #slider {
+    background-position: 62% 50%;
+    padding: 150px 0 140px 0;
+  }
+}
+/*--
+	Global-slider Start
+--*/
+#global-header {
+  background: url("../img/fader-stage-design-in-studio-1.jpg") no-repeat;
+  background-size: cover;
+  /*--
+  padding-top: 150px;
+  padding-bottom: 107px;
+  --*/
+  background-position: 50% 70%;
+  padding: 300px 100px 300px 0px;
+
+  position: relative;
+  background-attachment: fixed;
+}
+#global-header:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #433350, #312365);
+  opacity: 0.7;
+}
+#global-header .block {
+  color: #E3E3E4;
+  margin: 0 auto;
+  padding-left: 90px;
+  text-align: center;
+}
+#global-header .block h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 45px;
+  letter-spacing: 6px;
+  padding-bottom: 15px;
+  margin-top: 0;
+  text-transform: capitalize;
+}
+#global-header .block p {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
+/*--
+	wrapper Start
+--*/
+#intro {
+  background: #232633;/*fff*/
+  padding: 100px 0;
+}
+#intro .block {
+  padding-left: 0px;
+}
+#intro .block h2 {
+  padding-top: 35px;
+  line-height: 27px;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+#intro .block p {
+  color: #DEEDED;
+  padding-top: 0px;
+}
+#intro .block img {
+  padding-left: 0px;
+
+  width: 100%;
+  border-radius: 0%;
+}
+#intro .section-title {
+    color: #E0E3F7;
+  margin-bottom: 0px;
+}
+
+#intro .section-title p {
+  padding-top: 20px;
+  color: #DEEDED;
+}
+
+#intro .col-sm-4 {
+  padding:5px;
+
+}
+/*--
+	Slider-about Start
+--*/
+#slider-about {
+  background: url("../img/vjfader-Hifana3D_Tokyo-3-large.jpg") no-repeat;
+  background-size: cover;
+  /*--
+  padding-top: 150px;
+  padding-bottom: 107px;
+  --*/
+  background-position: 50% 70%;
+  padding: 300px 100px 300px 0px;
+
+  position: relative;
+  background-attachment: fixed;
+}
+#slider-about:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #433350, #312365);
+  opacity: 0.5;
+}
+#slider-about .block {
+  color: #E3E3E4;
+  margin: 0 auto;
+  padding-left: 90px;
+  text-align: center;
+}
+#slider-about .block h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 45px;
+  letter-spacing: 6px;
+  padding-bottom: 15px;
+  margin-top: 0;
+  text-transform: capitalize;
+}
+#slider-about .block p {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
+/*--
+	service Start
+--*/
+#service {
+  text-align: center;
+  padding-top: 0px;
+  background-color: #232633;
+}
+#service .section-title h2 {
+  color: #E0E3F7;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+#service .section-title p {
+  color: #DEEDED;
+}
+#service .service-item {
+  padding-bottom: 30px;
+}
+
+#service .service-item i {
+  font-size: 60px;
+  color: #999;#4A4656
+}
+
+#service .service-item h4 {
+  padding-top: 20px;
+  margin: 0;
+  color: #DEEDED;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+#service .service-item p {
+  color: #DEEDED;
+  padding-top: 10px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+
+}
+/*--
+	call-to-action Start
+--*/
+#call-to-action {
+  background: url("../img/1359007-bigthumbnail.jpg") no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 120px 0px;
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+#call-to-action:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #1d192c;
+  opacity: 0.6;
+}
+#call-to-action h2 {
+  padding-bottom: 20px;
+  line-height: 33px;
+  margin: 0;
+  font-size: 30px;
+  color: #DEEDED;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+#call-to-action p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+#call-to-action .btn-call-to-action {
+  padding: 15px 35px;
+  border: none;
+  background-color: #fff;
+  font-size: 15px;
+  color: #333333;
+  margin-top: 30px;
+}
+/*--
+	Feature Start
+--*/
+#feature {
+  background: url("../img/portfolio/VJFader-Backwoods2015-37-1-1140x642.jpg");
+  background-position: 50% 50%;
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: visible;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /* padding: 100px 200px; */
+  padding-top: 150px;
+  padding-bottom: 200px;
+  margin-bottom: 100px;
+
+}
+
+#feature:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, #433350, #312365);
+  opacity: 0.5;
+}
+#feature h2 {
+  color: #E0E3F7;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+#feature p {
+  color: #fff;/*8d8f92*/
+  margin-bottom: 20px;
+  background-color: #202329;
+  padding: 20px 20px;
+  opacity: 0.8;
+}
+#feature .btn-view-works {
+  background: #655E7A;
+  color: #fff;
+  padding: 10px 20px;
+}
+/*--
+	Work-Feature Start
+--*/
+#workfeature {
+  background: url("../img/portfolio/vjfader-invasion2018-myanmar.jpg");
+  background-position: 50% 50%;
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: visible;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: 100px 0px;
+  /* padding-top: 150px;
+  padding-bottom: 150px; */
+  margin-bottom: 50px;
+
+}
+
+#workfeature:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #433350, #312365);
+  opacity: 0.5;
+}
+#workfeature h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #E0E3F7;
+  /* font-size: 28px; */
+  /* font-weight: 600; */
+  margin-bottom: 30px;
+}
+#workfeature p {
+  color: #fff;/*8d8f92*/
+  margin-bottom: 20px;
+  background-color: #202329;
+  padding: 20px 20px;
+  opacity: 0.8;
+}
+#workfeature .btn-view-works {
+  background: #655E7A;
+  color: #fff;
+  padding: 10px 20px;
+}
+/*--
+	content Start
+--*/
+#testimonial {
+  padding: 100px 0;
+  background-color: #232633;
+  color: #E0E3F7;
+}
+#testimonial .block h2 {
+  line-height: 27px;
+  padding-top: 110px;
+}
+#testimonial .block p {
+  padding-top: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+#testimonial .section-title h2 {
+  color: #DEEDED;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+#testimonial .section-title.text-center p {
+  color: #DEEDED;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+#testimonial .counter-box li {
+  width: 50%;
+  float: left;
+  text-align: center;
+  margin: 30px 0 30px;
+}
+#testimonial .counter-box li i {
+  font-size: 35px;
+  color: #DEEDED;
+}
+#testimonial .counter-box li h4 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #999;
+}
+#testimonial .counter-box li span {
+  color: #DEEDED;
+}
+#testimonial .testimonial-carousel {
+  text-align: center;
+  width: 75%;
+  border: 1px solid #DEDEDE;
+  padding: 24px;
+  margin: 0 auto;
+}
+#testimonial .testimonial-carousel img {
+  padding-bottom: 38px;
+}
+#testimonial .testimonial-carousel p {
+  line-height: 28px;
+  font-weight: 300;
+  padding-bottom: 20px;
+}
+#testimonial .testimonial-carousel .user img {
+  padding-bottom: 0px;
+  border-radius: 500px;
+}
+#testimonial .testimonial-carousel .user p {
+  padding-bottom: 0;
+  font-size: 12px;
+  line-height: 20px;
+  color: #DEEDED;
+}
+#testimonial .testimonial-carousel .user p span {
+  display: block;
+  color: #DEEDED;
+  font-weight: 600;
+}
+#testimonial .testimonial-carousel .owl-carousel .owl-pagination div {
+  border: 1px solid #555;
+  border-radius: 500px;
+  display: inline-block;
+  height: 10px;
+  margin-right: 15px;
+  width: 10px;
+}
+#testimonial .testimonial-carousel .owl-carousel .owl-pagination div.active {
+  background: #777;
+  font-size: 30px;
+  display: inline-block;
+  border: 0px;
+}
+/*--
+	features Start
+--*/
+#clients-logo-section {
+  padding-top: 30px;
+  padding-bottom: 0px;
+}
+#clients-logo-section h2{
+  color: #DEEDED;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+#clients-logo-section .row{
+  text-align: center;
+    text-transform: uppercase;
+}
+#clients-logo-section p{
+  text-align: center;
+  color: #DEEDED;
+
+}
+
+#clients-logo-section .clients-logo-img{
+  padding: 0px 0px;
+
+  /* position: absolute; */
+   height: 50%;
+  vertical-align: middle;
+}
+/*---------------------------------------------
+					Work Start
+-----------------------------------------------*/
+/*--
+	Slider-work Start
+--*/
+#slider-work {
+  background: url("../img/portfolio/VJFader-IntroShangHai2016-mainstage2-800x450.jpg") no-repeat;
+  background-size: cover;
+  /*--
+  padding-top: 150px;
+  padding-bottom: 107px;
+  --*/
+  background-position: 50% 70%;
+  padding: 300px 100px 300px 0px;
+
+  position: relative;
+  background-attachment: fixed;
+}
+#slider-work:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #433350, #312365);
+  opacity: 0.4;
+}
+#slider-work .block {
+  color: #E3E3E4;
+  margin: 0 auto;
+  padding-left: 90px;
+  text-align: center;
+}
+#slider-work .block h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 45px;
+
+  letter-spacing: 6px;
+  padding-bottom: 15px;
+  margin-top: 0;
+  text-transform: capitalize;
+}
+#slider-work .block p {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
+/*--
+	portfolio-work Start
+--*/
+#portfolio-work {
+  overflow: hidden;
+  padding: 0px 0;
+    background-color: #232633;
+}
+#portfolio-work .block .portfolio-menu {
+  padding-bottom: 30px;
+  text-align: center;
+}
+#portfolio-work .block .portfolio-menu ul {
+  border: 1px solid #999999;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+#portfolio-work .block .portfolio-menu ul li {
+  display: inline-block;
+  padding: 0px 25px;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 40px;
+  font-weight: 600;
+  color: #333333;
+  text-transform: capitalize;
+  position: relative;
+}
+#portfolio-work .block .portfolio-menu ul .active {
+  color: #655E7A;
+  position: relative;
+}
+#portfolio-work .block .portfolio-menu ul .active:before {
+  content: "\f0d7";
+  position: absolute;
+  font-family: 'Roboto';
+  bottom: -18px;
+  font-size: 24px;
+  width: 20px;
+  left: 0px;
+  right: 0px;
+  top: 23px;
+  margin: 0 auto;
+  color: #fff;
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.9);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+#portfolio-work .block .portfolio-menu ul li:hover:before {
+  content: "\f0d7";
+  position: absolute;
+  font-family: 'Roboto';
+  bottom: -18px;
+  font-size: 30px;
+  width: 20px;
+  left: 0px;
+  right: 0px;
+  top: 24px;
+  margin: 0 auto;
+  color: #fff;
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.9);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+#portfolio-work .block .portfolio-contant ul li {
+  float: left;
+  width: 30%;
+  overflow: hidden;
+  margin: 5px;
+  position: relative;
+}
+#portfolio-work .block .portfolio-contant ul li:hover .overly {
+  opacity: 1;
+}
+#portfolio-work .block .portfolio-contant ul li:hover .position-center {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+#portfolio-work .block .portfolio-contant ul li a {
+  display: block;
+  color: #fff;
+}
+#portfolio-work .block .portfolio-contant ul li a h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#portfolio-work .block .portfolio-contant ul li a p {
+  font-size: 12px;
+  line-height: 20px;
+}
+#portfolio-work .block .portfolio-contant ul li a span {
+  font-style: italic;
+  font-size: 12px;
+  color: #655E7A;
+}
+#portfolio-work .block .portfolio-contant ul img {
+  width: 100%;
+  height: auto;
+}
+#portfolio-work .block .portfolio-contant .overly {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  -webkit-transition: .3s all;
+  -o-transition: .3s all;
+  transition: .3s all;
+  text-align: center;
+}
+#portfolio-work .block .portfolio-contant .position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(0%, 50%);
+  -moz-transform: translate(0%, 50%);
+  -ms-transform: translate(0%, 50%);
+  transform: translate(0%, 50%);
+  -webkit-transition: .5s all;
+  -o-transition: .5s all;
+  transition: .5s all;
+}
+#portfolio-work .block .mix {
+  display: none;
+}
+/*--
+	wrapper-work Start
+--*/
+#wrapper-work {
+  overflow: hidden;
+  padding-top: 100px;
+}
+#wrapper-work ul li {
+  width: 50%;
+  float: left;
+  position: relative;
+}
+#wrapper-work ul li img {
+  width: 100%;
+  height: 100%;
+}
+#wrapper-work ul li .items-text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding-left: 44px;
+  padding-top: 140px;
+}
+#wrapper-work ul li .items-text h2 {
+  padding-bottom: 28px;
+  padding-top: 75px;
+  position: relative;
+}
+#wrapper-work ul li .items-text h2:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 75px;
+  height: 3px;
+  background: #fff;
+}
+#wrapper-work ul li .items-text p {
+  padding-top: 30px;
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 300;
+  padding-right: 80px;
+}
+/*--
+	features-work Start
+--*/
+#features-work {
+  padding-top: 50px;
+  padding-bottom: 75px;
+}
+#features-work .block ul li {
+  width: 19%;
+  text-align: center;
+  display: inline-block;
+  padding: 40px 0px;
+}
+/*---------------------------------------------
+					Work Close
+-----------------------------------------------*/
+/*=============================================*/
+/*---------------------------------------------
+					 Contact Start
+-----------------------------------------------*/
+/*--
+	slider-contact Start
+--*/
+#slider-contact {
+  background: url("../img/fader-stage-design-in-studio-806x300.jpg") no-repeat;
+  background-size: cover;
+  padding-top: 150px;
+  padding-bottom: 107px;
+  position: relative;
+}
+#slider-contact:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, #5A647F, #1f1c2c);
+  opacity: 0.8;
+}
+#slider-contact .block {
+  color: #E3E3E4;
+  margin: 0 auto;
+  padding-left: 90px;
+}
+#slider-contact .block h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 45px;
+  line-height: 60px;
+  letter-spacing: 6px;
+  padding-bottom: 15px;
+}
+#slider-contact .block p {
+  font-size: 23px;
+  line-height: 40px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
+/*--
+	contact-form Start
+--*/
+#contact-form {
+  background-color: #8493BA;
+  padding-top: 70px;
+  padding-bottom: 35px;
+}
+#contact-form .block form .form-group {
+  padding-bottom: 15px;
+  margin: 0px;
+}
+#contact-form .block form .form-group .form-control {
+  background: #F6F8FA;
+  height: 60px;
+  border: 1px solid #EEF2F6;
+  box-shadow: none;
+  width: 100%;
+}
+#contact-form .block form .form-group-2 {
+  padding-bottom: 15px;
+  margin: 0px;
+}
+#contact-form .block form .form-group-2 textarea {
+  background: #F6F8FA;
+  height: 135px;
+  border: 1px solid #EEF2F6;
+  box-shadow: none;
+  width: 100%;
+}
+#contact-form .block button {
+  width: 100%;
+  height: 60px;
+  background: #47424C;
+  border: none;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+/*--
+	wrapper-contact Start
+--*/
+.address-block li {
+  margin-bottom: 20px;
+}
+.address-block li i {
+  margin-right: 15px;
+  font-size: 20px;
+  width: 20px;
+}
+.social-icons {
+  margin-top: 40px;
+}
+.social-icons li {
+  display: inline-block;
+  margin: 0 6px;
+}
+.social-icons a {
+  display: inline-block;
+}
+.social-icons i {
+  color: #2C2C2C;
+  margin-right: 25px;
+  font-size: 25px;
+}
+.google-map {
+  position: relative;
+}
+.google-map #map {
+  width: 100%;
+  height: 300px;
+  background-color: #ff432e;
+}
+#contact-box {
+  padding-top: 35px;
+  padding-bottom: 58px;
+}
+#contact-box .block img {
+  width: 100%;
+}
+#contact-box .block h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #000;
+  font-size: 28px;
+  padding-bottom: 30px;
+}
+#contact-box .block p {
+  color: #5C5C5C;
+  display: block;
+}
+/*--
+	features-contact Start
+--*/
+#features-contact {
+  padding-top: 50px;
+  padding-bottom: 75px;
+}
+#features-contact .block ul li {
+  width: 19%;
+  text-align: center;
+  display: inline-block;
+  padding: 40px 0px;
+}
+/* Blog */
+
+.post {
+  background-color: #CDD6D5;
+}
+.blog {
+  background-color: #CDD6D5;
+}
+.center-text {
+  background-color: #CDD6D5;
+}
+.blog-post{
+  margin-bottom: 50px;
+}
+
+.blog-post img{
+  margin-bottom: 15px;
+}
+.blog-post p{
+  margin: 15px 0 20px;
+}
+
+.post-title{
+  color: #655E7A;
+  font-size: 25px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+}
+/*---------------------------------------------
+					Contact Close
+-----------------------------------------------*/
+/*--------- Heading------------*/
+.heading {
+  padding-bottom: 60px;
+  text-align: center;
+}
+.heading h2 {
+  color: #000;//000
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 400;
+}
+.heading p {
+  font-size: 18px;
+  line-height: 40px;
+  color: #292929;
+  font-weight: 300;
+}
+/*---------------------------*/
+/*--
+	footer Start
+--*/
+footer {
+  background: #191919;/*f5f5f5*/
+  text-align: center;
+  padding-top: 48px;
+  padding-bottom: 55px;
+}
+footer p {
+  font-size: 13px;
+  line-height: 25px;
+  color: #444;/*919191*/
+}
+footer a {
+  color: #fff;/*595959*/
+}
+footer .footer-manu {
+  padding-bottom: 25px;
+}
+footer .footer-manu ul {
+  margin: 0px;
+  padding: 0px;
+}
+footer .footer-manu ul li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+footer .footer-manu ul li a {
+  display: inline-block;
+  color: #E0E3F7;
+}
+footer .footer-manu ul li a:hover {
+  color: #fff;
+}

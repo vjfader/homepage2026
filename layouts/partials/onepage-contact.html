@@ -1,0 +1,57 @@
+{{ with .Site.Params.contact }}
+<section id="contact" class="onepage-dark-section" style="background-color:#232633;color:#dfe7ff;">
+  <div class="container">
+    <div class="row">
+      <div class="section-title text-center onepage-light-text" style="color:#dfe7ff;margin-bottom:32px;">
+        <h2 class="onepage-light-heading" style="color:#f3f6ff;">{{ .title }}</h2>
+        <p class="onepage-light-text onepage-copy" style="color:#dfe7ff;font-family:'Roboto',sans-serif;font-size:16px;line-height:1.4;font-weight:300;">{{ .subtitle }}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="block">
+          <form name="contact" method="POST" netlify>
+            <div class="form-group">
+              <input type="text" name="name" class="form-control" placeholder="{{ .form.name }}">
+            </div>
+            <div class="form-group">
+              <input type="text" name="email" class="form-control" placeholder="{{ .form.email }}">
+            </div>
+            <div class="form-group">
+              <input type="text" name="subject" class="form-control" placeholder="{{ .form.subject }}">
+            </div>
+            <div class="form-group-2">
+              <textarea class="form-control" name="message" rows="5" placeholder="{{ .form.message }}"></textarea>
+            </div>
+            <button type="submit" class="btn btn-main">{{ .form.button }}</button>
+            <br><br>
+            <div data-netlify-recaptcha></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-12">
+        <div class="block">
+          <h2 class="onepage-light-heading" style="color:#f3f6ff;">{{ .box.title }}</h2>
+          <ul class="address-block onepage-light-text onepage-copy" style="color:#dfe7ff;font-family:'Roboto',sans-serif;font-size:16px;line-height:1.4;font-weight:300;">
+            <li>
+              <i class="fa fa-map-marker"></i>{{ .box.address }}
+            </li>
+            <li>
+              <i class="fa fa-envelope-o"></i>
+              Email: <a href="mailto:vjfader@gmail.com">vjfader@gmail.com</a>
+            </li>
+            <li>
+              <i class="fa fa-phone"></i>{{ .box.phone }}
+            </li>
+          </ul>
+          <ul class="social-icons">
+            {{ partial "social.html" . }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

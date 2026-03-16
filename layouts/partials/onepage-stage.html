@@ -1,0 +1,52 @@
+<section id="stage-design" class="onepage-dark-section" style="background-color:#232633;color:#dfe7ff;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <div class="section-title onepage-light-text" style="color:#dfe7ff;margin-bottom:32px;">
+          <h2 class="onepage-light-heading" style="color:#f3f6ff;">{{ .Site.Params.feature.title }}</h2>
+          <div class="onepage-richtext onepage-copy" style="color:#dfe7ff;font-family:'Roboto',sans-serif;font-size:16px;line-height:1.4;font-weight:300;">{{ .Site.Params.feature.content | markdownify }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="block">
+          <div class="onepage-richtext onepage-light-text onepage-copy" style="color:#dfe7ff;font-family:'Roboto',sans-serif;font-size:16px;line-height:1.4;font-weight:300;margin-top:0;margin-bottom:32px;">{{ .Site.Params.workfeature.content | markdownify }}</div>
+          <a href="/stage-design/" class="btn btn-main" style="display:inline-block;margin-right:0;margin-bottom:18px;">View My Stage Designs</a>
+          <br>
+          {{ with .Site.Params.workfeature.button }}
+            <a href="{{ .url }}" class="btn btn-main">{{ .caption }}</a>
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="block">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/TsxW3gy_A8M?rel=0&modestbranding=1&autohide=1&showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ partial "load-photoswipe.html" . }}
+{{ partial "gallery1.html" . }}
+
+<section id="clients-logo-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="onepage-light-heading" style="color:#f3f6ff;">Clients</h2>
+        <br><br>
+        <div class="block">
+          <div id="clients-logo" class="owl-carousel">
+            {{ range .Site.Data.work.clients }}
+            <div class="clients-logo-img">
+              <a href="{{ .url }}"><img src="{{ $.Site.BaseURL }}{{ .image }}" alt="Client logo"></a>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
