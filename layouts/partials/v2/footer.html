@@ -1,0 +1,21 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="{{ "img/vjfader-logo.png" | absURL }}" alt="{{ .Site.Title }}" width="188" height="50" loading="lazy">
+      <p>{{ .Site.Params.author }} · {{ .Site.Params.location }}</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        {{- range .Site.Menus.footer }}
+        <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+    {{ partial "v2/social.html" . }}
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; {{ now.Year }} {{ .Site.Params.author }}. All rights reserved.</p>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+{{ partial "analytics.html" . }}

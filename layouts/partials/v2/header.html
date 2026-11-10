@@ -1,0 +1,22 @@
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="{{ "/" | absURL }}" aria-label="{{ .Site.Title }} home">
+      <img src="{{ "img/vjfader-logo.png" | absURL }}" alt="{{ .Site.Title }}" width="188" height="50">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+      <span class="nav-toggle-open">{{ partial "v2/icon.html" "menu" }}</span>
+      <span class="nav-toggle-close">{{ partial "v2/icon.html" "x" }}</span>
+      <span class="sr-only">Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        {{- $current := .RelPermalink -}}
+        {{- range .Site.Menus.header }}
+        {{- $isContact := eq .Name "Contact" }}
+        <li><a href="{{ .URL | absURL }}"{{ if $isContact }} class="btn btn-small"{{ end }}{{ if eq (.URL | relURL) $current }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+        {{- end }}
+      </ul>
+    </nav>
+  </div>
+</header>

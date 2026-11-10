@@ -1,0 +1,8 @@
+{{- /*
+  Click-to-play YouTube embed. Nothing loads from YouTube until the visitor clicks.
+  Usage: partial "v2/video.html" (dict "id" "YOUTUBE_ID" "title" "…" "poster" "reel-vfx.jpg")
+*/ -}}
+<a class="video" href="https://www.youtube.com/watch?v={{ .id }}" data-yt="{{ .id }}" data-title="{{ .title }}" target="_blank" rel="noopener">
+  {{ partial "v2/img.html" (dict "src" .poster "alt" "" "widths" (slice 640 960 1280) "sizes" "(min-width: 960px) 50vw, 100vw" "class" "video-poster") }}
+  <span class="video-play">{{ partial "v2/icon.html" "play" }}<span class="sr-only">Play video: {{ .title }}</span></span>
+</a>

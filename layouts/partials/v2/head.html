@@ -1,0 +1,53 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0d12">
+<meta name="color-scheme" content="dark">
+{{ $seoTitle := .Title }}
+{{ if .IsHome }}
+  {{ $seoTitle = printf "%s | Berlin VFX Artist, Music Visualization, Stage Design" .Site.Params.author }}
+{{ else }}
+  {{ $seoTitle = printf "%s | %s" .Title .Site.Title }}
+{{ end }}
+{{ $seoDescription := .Site.Params.seo.description }}
+{{ with .Description }}
+  {{ $seoDescription = . }}
+{{ else }}
+  {{ if and .IsPage .Summary }}
+    {{ $seoDescription = .Summary | plainify | truncate 160 }}
+  {{ end }}
+{{ end }}
+{{ $seoImage := .Site.Params.seo.image | absURL }}
+{{ with .Params.thumbnailImage }}
+  {{ $seoImage = . | absURL }}
+{{ end }}
+{{ $seoKeywords := delimit .Site.Params.keywords ", " }}
+{{ with .Params.seoKeywords }}
+  {{ $seoKeywords = delimit . ", " }}
+{{ end }}
+<meta name="description" content="{{ $seoDescription }}">
+<meta name="keywords" content="{{ $seoKeywords }}">
+<!-- robots -->
+<!-- you may configure it in the front matter of the page or in site params -->
+{{ if or (isset .Params "robots") (isset .Site.Params "robots") }}
+<meta name="robots" content="{{ with .Params.robots }}{{ . }}{{ else }}{{ .Site.Params.robots }}{{ end }}">
+{{ end }}
+ 
+{{ partial "favicon.html" . }}
+ 
+<title>{{ $seoTitle }}</title>
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="author" content="{{ .Site.Params.author }}">
+{{ partial "opengraph.html" . }}
+{{ hugo.Generator }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $seoTitle }}">
+<meta name="twitter:description" content="{{ $seoDescription }}">
+<meta name="twitter:image" content="{{ $seoImage }}">
+
+<link rel="manifest" href="{{ "manifest.json" | absURL }}">
+<link rel="preload" href="{{ "fonts/inter-latin-var.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
+{{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+<script defer src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{ partial "seo_schema" . }}

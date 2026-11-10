@@ -1,0 +1,20 @@
+# Selected work shown on the homepage.
+# image: file in assets/images/work/ (resized automatically).
+- title: Intro Festival Main Stage
+  meta: Shanghai · 2016
+  image: work/intro-shanghai-2016.jpg
+- title: MIDI Electronic Main Stage
+  meta: 2017
+  image: work/midi-electronic-2017.jpg
+- title: Invasion Music Festival
+  meta: Myanmar · 2018
+  image: work/invasion-myanmar-2018.jpg
+- title: Intro Festival "TechnoShip"
+  meta: Beijing · 2013
+  image: work/intro-beijing-2013.jpg
+- title: MLove AV Mapping
+  meta: Projection mapping · 2014
+  image: work/mlove-mapping-2014.jpg
+- title: Halloween Video Mapping
+  meta: Projection mapping · 2015
+  image: work/halloween-mapping-2015.jpg

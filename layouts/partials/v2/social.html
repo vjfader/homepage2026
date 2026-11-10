@@ -1,0 +1,9 @@
+{{- /* Text social links from [params.social]. */ -}}
+{{- $s := site.Params.social -}}
+<ul class="social-links">
+  {{- range $l := slice (dict "u" $s.instagram "n" "Instagram") (dict "u" $s.youtube "n" "YouTube") (dict "u" $s.linkedin "n" "LinkedIn") (dict "u" $s.vimeo "n" "Vimeo") }}
+  {{- with $l.u }}
+  <li><a href="{{ . }}" target="_blank" rel="noopener">{{ $l.n }} {{ partial "v2/icon.html" "arrow-up-right" }}</a></li>
+  {{- end }}
+  {{- end }}
+</ul>

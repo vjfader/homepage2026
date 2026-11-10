@@ -1,23 +1,210 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}">
+<html lang="{{ .Site.LanguageCode | default "en" }}" id="top">
 <head>
-
-	{{ partial "head.html" . }}
-
+  {{ partial "v2/head.html" . }}
 </head>
 <body>
-	{{ partial "header.html" . }}
+  {{ partial "v2/header.html" . }}
 
-	{{ if and (isset .Site.Params "slider") (.Site.Params.slider.enable) }}
-		{{ partial "slider.html" . }}
-	{{ end }}
+  <main id="main">
 
-	{{ partial "onepage-about.html" . }}
-	{{ partial "onepage-vfx.html" . }}
-	{{ partial "onepage-stage.html" . }}
-	{{ partial "onepage-contact.html" . }}
+    {{/* ---------- Hero ---------- */}}
+    {{ with .Site.Params.slider }}
+    <section class="hero" aria-labelledby="hero-title">
+      {{ partial "v2/img.html" (dict "src" "hero.jpg" "alt" "Audio-reactive particle artwork by Fader" "widths" (slice 768 1280 1600) "sizes" "100vw" "class" "hero-media" "eager" true) }}
+      <div class="container hero-content">
+        {{ with .eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
+        <h1 id="hero-title">{{ .title }}</h1>
+        <p class="hero-lead">{{ .subtitle }}</p>
+        <div class="hero-actions">
+          <a class="btn" href="#work">See selected work</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+    </section>
+    {{ end }}
 
-	{{ partial "footer.html" . }}
+    {{/* ---------- Disciplines ---------- */}}
+    <section class="section" id="disciplines" aria-label="Disciplines">
+      <div class="container">
+        {{ with .Site.Params.vfx }}
+        <article class="feature">
+          <div class="feature-media">
+            {{ partial "v2/video.html" (dict "id" .reel "title" "VFX music visualization reel" "poster" "reel-vfx.jpg") }}
+          </div>
+          <div class="feature-body">
+            <p class="eyebrow">01 · Realtime</p>
+            <h2>{{ .title }}</h2>
+            <p>{{ .summary }}</p>
+            {{ with .points }}
+            <ul class="checklist">
+              {{ range . }}<li>{{ . }}</li>{{ end }}
+            </ul>
+            {{ end }}
+            <a class="link-arrow" href="{{ "vfx/" | absURL }}">Explore VFX work {{ partial "v2/icon.html" "arrow-right" }}</a>
+          </div>
+        </article>
+        {{ end }}
 
+        {{ with .Site.Params.feature }}
+        <article class="feature feature-reverse">
+          <div class="feature-media">
+            {{ partial "v2/video.html" (dict "id" .reel "title" "Stage design reel" "poster" "reel-stage.jpg") }}
+          </div>
+          <div class="feature-body">
+            <p class="eyebrow">02 · Live</p>
+            <h2>{{ .title }}</h2>
+            <p>{{ .content | plainify }}</p>
+            <div class="link-row">
+              <a class="link-arrow" href="{{ "stage-design/" | absURL }}">View stage design {{ partial "v2/icon.html" "arrow-right" }}</a>
+              {{ with $.Site.Params.workfeature.button }}
+              <a class="link-muted" href="{{ .url | absURL }}">Portfolio PDF (29 MB)</a>
+              {{ end }}
+            </div>
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </section>
+
+    {{/* ---------- Selected work ---------- */}}
+    {{ with .Site.Data.projects }}
+    <section class="section section-alt" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Selected work</p>
+          <h2 id="work-title">Stages, screens and spaces</h2>
+        </div>
+        <ul class="work-grid">
+          {{ range . }}
+          {{ $full := (resources.Get (printf "images/%s" .image)).Resize "1600x webp q80" }}
+          <li class="work-item">
+            <a href="{{ $full.Permalink }}" data-lightbox data-caption="{{ .title }} — {{ .meta }}">
+              <div class="work-media">
+                {{ partial "v2/img.html" (dict "src" .image "alt" .title "widths" (slice 480 720 960) "sizes" "(min-width: 1100px) 360px, (min-width: 700px) 50vw, 100vw") }}
+              </div>
+              <h3>{{ .title }}</h3>
+              <p>{{ .meta }}</p>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </section>
+    {{ end }}
+
+    {{/* ---------- Services ---------- */}}
+    {{ with .Site.Data.service }}{{ if .enable }}
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Services</p>
+          <h2 id="services-title">What I do</h2>
+          <p class="section-lead">{{ .subtitle }}</p>
+        </div>
+        <ol class="services">
+          {{ range $i, $s := .content }}
+          <li>
+            <span class="services-num">{{ printf "%02d" (add $i 1) }}</span>
+            <h3>{{ $s.name }}</h3>
+            <p>{{ $s.text }}</p>
+          </li>
+          {{ end }}
+        </ol>
+      </div>
+    </section>
+    {{ end }}{{ end }}
+
+    {{/* ---------- About ---------- */}}
+    {{ with .Site.Params.wrapper }}
+    <section class="section section-alt" id="about" aria-labelledby="about-title">
+      <div class="container about">
+        <div class="about-media">
+          {{ partial "v2/img.html" (dict "src" "portrait.jpg" "alt" "Portrait of James Cui, aka Fader" "widths" (slice 400 700) "sizes" "(min-width: 900px) 420px, 100vw") }}
+        </div>
+        <div class="about-body">
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">{{ .title }}</h2>
+          <p class="about-lead">{{ .italic }}</p>
+          <p>{{ .paragraph }}</p>
+          {{ partial "v2/social.html" $ }}
+        </div>
+      </div>
+    </section>
+    {{ end }}
+
+    {{/* ---------- Clients ---------- */}}
+    {{ with .Site.Data.work.clients }}
+    <section class="section section-tight" aria-labelledby="clients-title">
+      <div class="container">
+        <h2 class="clients-title" id="clients-title">Clients &amp; festivals</h2>
+        <ul class="clients">
+          {{ range . }}
+          <li>
+            <a href="{{ .url }}" target="_blank" rel="noopener">
+              {{ partial "v2/img.html" (dict "src" .logo "alt" .name "widths" (slice 200 400) "sizes" "160px") }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </section>
+    {{ end }}
+
+    {{/* ---------- Contact ---------- */}}
+    {{ with .Site.Params.contact }}
+    <section class="section section-alt" id="contact" aria-labelledby="contact-title">
+      <div class="container contact">
+        <div class="contact-intro">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Let’s make something that moves</h2>
+          <p class="section-lead">{{ .subtitle }}</p>
+          <ul class="contact-details">
+            <li>{{ partial "v2/icon.html" "mail" }}<a href="mailto:{{ .box.email }}">{{ .box.email }}</a></li>
+            <li>{{ partial "v2/icon.html" "map-pin" }}<span>{{ .box.address }}</span></li>
+          </ul>
+          {{ partial "v2/social.html" $ }}
+        </div>
+
+        <form class="contact-form" name="contact" method="POST" action="{{ "thanks/" | absURL }}" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="sr-only" hidden><label>Leave this empty: <input name="bot-field"></label></p>
+          <div class="field-row">
+            <div class="field">
+              <label for="contact-name">{{ .form.name }}</label>
+              <input type="text" id="contact-name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="contact-email">{{ .form.email }}</label>
+              <input type="email" id="contact-email" name="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="contact-subject">{{ .form.subject }}</label>
+            <input type="text" id="contact-subject" name="subject">
+          </div>
+          <div class="field">
+            <label for="contact-message">{{ .form.message }}</label>
+            <textarea id="contact-message" name="message" rows="6" required></textarea>
+          </div>
+          <div data-netlify-recaptcha="true"></div>
+          <p class="form-warning" data-contact-form-warning hidden>Please complete the CAPTCHA before sending your message.</p>
+          <button type="submit" class="btn">{{ .form.button }}</button>
+        </form>
+      </div>
+    </section>
+    {{ end }}
+
+  </main>
+
+  {{ partial "v2/footer.html" . }}
+
+  <dialog class="lightbox" data-lightbox-dialog aria-label="Image viewer">
+    <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close">{{ partial "v2/icon.html" "x" }}</button>
+    <figure>
+      <img alt="" data-lightbox-img>
+      <figcaption data-lightbox-caption></figcaption>
+    </figure>
+  </dialog>
 </body>
 </html>
