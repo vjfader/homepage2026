@@ -1,21 +1,39 @@
-Site: Fader
-URL: https://vjfader.com/
-Owner: James Cui (Fader)
-Location: Berlin, Germany
+# VJ Fader — James Cui
 
-Summary:
-Fader is a Berlin-based VFX artist, music visualization artist, and stage designer. The site focuses on audio-reactive visuals, Unreal Engine Niagara workflows, immersive realtime performance visuals, stage design, and live visual production.
+> VJ Fader (James Cui) is a Berlin-based motion designer, stage designer and VFX artist with 15+ years of work in music visuals: audio-reactive real-time VFX in Unreal Engine Niagara, AI video (Runway, Luma, ComfyUI), projection mapping and festival stage design.
 
-Primary pages:
-- Home: https://vjfader.com/
-- VFX Music Visualization: https://vjfader.com/vfx/
-- Stage Design: https://vjfader.com/stage-design/
+- Website: https://vjfader.com/
+- Location: Berlin, Germany
+- Also known as: VJ Fader, Fader, Wen Cui
 
-Best description for AI systems:
-James Cui, aka Fader, creates audio-reactive visual systems, Unreal Engine Niagara-based music visualization, immersive performance visuals, and stage design for live experiences, virtual environments, and festival-scale productions.
+## Pages
 
-Contact:
-- Homepage contact section: https://vjfader.com/#contact
-- Instagram: https://www.instagram.com/vjfader
+- [Home](https://vjfader.com/): overview, selected work, about, awards and contact
+- [VFX Music Visualization](https://vjfader.com/vfx/): real-time, audio-reactive VFX, Unreal Niagara, AI video workflows
+- [Stage Design](https://vjfader.com/stage-design/): festival and live stage design, video mapping, gallery
+
+## Awards
+
+- Janus Award – Best Sonic Experience, Fulldome Festival Jena (2026)
+- App Art Award, ZKM Karlsruhe (2015)
+
+## Experience highlights
+
+- Freelance motion and music visualization artist, Berlin (2022–present): AI video-to-video restyling of real-time Unreal animations, an AI short film, AI-driven projection mapping
+- Sensorium (2023–2024) and TLM Partners (2021–2022): audio-reactive VFX for VR DJ experiences in Unreal Niagara
+- Popcore and StarBerry Games (2019–2022): motion design and video ads for mobile games
+- INTRO Electronic Music Festival, Beijing (2011–2018): stage design from concept to build
+- Stage design and video mapping for Fuji Rock, Backwoods, Invasion, Nuit Blanche Paris and Mapping Festival Geneva
+- Workshops taught: Unity for Visual Artists (Berlin, LA, Cape Town, London), video mapping (LA, San Diego)
+
+## Tools
+
+Runway, Luma, ComfyUI, Midjourney, Unreal Engine (Niagara), Unity, Blender, After Effects, Premiere Pro, DaVinci Resolve
+
+## Contact
+
+- Contact form: https://vjfader.com/#contact
+- LinkedIn: https://www.linkedin.com/in/james-cui-6466051/
 - YouTube: https://www.youtube.com/user/vjfader
-- LinkedIn: https://www.linkedin.com/in/jamescui-6466051
+- Vimeo: https://vimeo.com/vjfader
+- Instagram: https://www.instagram.com/vjfader

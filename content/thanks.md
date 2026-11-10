@@ -3,6 +3,8 @@ title = "Thank You"
 description = "Thanks for reaching out to Fader."
 id = "thanks-page"
 robots = "noindex"
+[sitemap]
+  disable = true
 +++
 
 I appreciate you taking the time to send a message. I will read it personally and get back to you as soon as I can.

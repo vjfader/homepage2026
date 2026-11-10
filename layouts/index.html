@@ -8,6 +8,9 @@
         {{ with .eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
         <h1 id="hero-title">{{ .title }}</h1>
         <p class="hero-lead">{{ .subtitle }}</p>
+        {{ range first 1 (where (site.Params.awards | default slice) "hero" true) }}
+        <p class="hero-award">{{ partial "v2/icon.html" "award" }}<span>Winner · {{ .name }} · {{ .org }} {{ .year }}</span></p>
+        {{ end }}
         <div class="hero-actions">
           <a class="btn" href="#work">See selected work</a>
           <a class="btn btn-ghost" href="#contact">Get in touch</a>
@@ -99,13 +102,21 @@
     <section class="section section-alt" id="about" aria-labelledby="about-title">
       <div class="container about">
         <div class="about-media">
-          {{ partial "v2/img.html" (dict "src" "portrait.jpg" "alt" "Portrait of James Cui, aka Fader" "widths" (slice 400 700) "sizes" "(min-width: 900px) 420px, 100vw") }}
+          {{ partial "v2/img.html" (dict "src" "portrait.jpg" "alt" "Portrait of James Cui, aka VJ Fader" "widths" (slice 400 700) "sizes" "(min-width: 900px) 420px, 100vw") }}
         </div>
         <div class="about-body">
           <p class="eyebrow">About</p>
           <h2 id="about-title">{{ .title }}</h2>
           <p class="about-lead">{{ .italic }}</p>
           <p>{{ .paragraph }}</p>
+          {{ with site.Params.awards }}
+          <div class="awards">
+            <h3>Awards</h3>
+            <ul>
+              {{ range . }}<li><span class="awards-year">{{ .year }}</span><span><strong>{{ .name }}</strong> · {{ .org }}</span></li>{{ end }}
+            </ul>
+          </div>
+          {{ end }}
           {{ partial "v2/social.html" $ }}
         </div>
       </div>

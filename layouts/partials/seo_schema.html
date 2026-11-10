@@ -9,28 +9,26 @@
 {{ end }}
 {{ $isServicePage := or (eq .Params.id "vfx-page") (eq .Params.id "stage-design-page") }}
 {{ if .IsHome }}
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "{{ .Site.Params.author }}",
-  "alternateName": "Fader",
-  "url": "{{ .Site.BaseURL }}",
-  "image": "{{ .Site.Params.seo.image | absURL }}",
-  "jobTitle": "VFX Artist, Music Visualization Artist, and Stage Designer",
-  "description": "{{ $description }}",
-  "homeLocation": {
-    "@type": "Place",
-    "name": "{{ .Site.Params.location }}"
-  },
-  "sameAs": [
-    "{{ .Site.Params.social.youtube }}",
-    "{{ .Site.Params.social.instagram }}",
-    "{{ .Site.Params.social.linkedin }}"
-  ],
-  "knowsAbout": [
-    {{ range $index, $keyword := .Site.Params.keywords }}{{ if $index }}, {{ end }}"{{ $keyword }}"{{ end }}
-  ]
-}
+{{- $s := .Site.Params.social -}}
+{{- $awards := slice -}}
+{{- range .Site.Params.awards }}{{ $awards = $awards | append (printf "%s, %s (%d)" .name .org .year) }}{{ end -}}
+{{- $person := dict
+  "@context" "https://schema.org"
+  "@type" "Person"
+  "name" .Site.Params.author
+  "alternateName" (slice "VJ Fader" "Fader" "Wen Cui")
+  "url" .Site.BaseURL
+  "image" (.Site.Params.seo.image | absURL)
+  "jobTitle" "Motion Designer, AI Video and VFX Artist, Stage Designer"
+  "description" $description
+  "homeLocation" (dict "@type" "Place" "name" .Site.Params.location)
+  "alumniOf" (dict "@type" "CollegeOrUniversity" "name" "ArtCenter College of Design")
+  "knowsLanguage" (slice "English" "Chinese" "Korean" "German")
+  "award" $awards
+  "sameAs" (slice $s.linkedin $s.youtube $s.vimeo $s.instagram $s.facebook)
+  "knowsAbout" .Site.Params.keywords
+-}}
+{{ $person | jsonify | safeJS }}
 {{ else if $isServicePage }}
 {
   "@context": "https://schema.org",
@@ -42,7 +40,7 @@
     "@type": "Person",
     "name": "{{ .Site.Params.author }}",
     "alternateName": "Fader",
-    "jobTitle": "VFX Artist, Music Visualization Artist, and Stage Designer"
+    "jobTitle": "Motion Designer, AI Video and VFX Artist, Stage Designer"
   },
   "creator": {
     "@type": "Person",

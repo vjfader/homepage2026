@@ -222,6 +222,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero-content { max-width: calc(var(--container) + 2 * var(--gutter)); }
 .hero h1 { max-width: 14ch; margin-bottom: 1.5rem; }
 .hero-lead { max-width: 34rem; color: #c9cedb; font-size: var(--step-1); line-height: 1.5; margin-bottom: 2.25rem; }
+.hero-award { display: inline-flex; align-items: center; gap: 0.5rem; margin: -1.25rem 0 2rem; color: var(--accent); font-size: var(--step--1); font-weight: 500; letter-spacing: 0.01em; }
+.hero-award .icon { width: 1.05em; height: 1.05em; flex: none; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
 @media (max-width: 700px) {
@@ -328,6 +330,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .about-lead { font-size: 1.15rem; line-height: 1.6; color: var(--text); }
 .about-body > p:not(.eyebrow):not(.about-lead) { color: var(--muted); }
 .about-body .social-links { margin-top: 2rem; }
+.awards { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.awards h3 { font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.12em; color: var(--faint); margin-bottom: 0.75rem; }
+.awards ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+.awards li { display: flex; gap: 1rem; color: var(--muted); }
+.awards strong { color: var(--text); font-weight: 600; }
+.awards-year { color: var(--accent); font-variant-numeric: tabular-nums; min-width: 2.75rem; }
 
 /* ---------- Social links ---------- */
 .social-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }

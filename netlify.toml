@@ -36,3 +36,14 @@
   for = "/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000"
+
+# Old tag and category pages were removed; send visitors and crawlers to the blog.
+[[redirects]]
+  from = "/tags/*"
+  to = "/blog/"
+  status = 301
+
+[[redirects]]
+  from = "/categories/*"
+  to = "/blog/"
+  status = 301

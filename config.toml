@@ -6,14 +6,22 @@ buildDrafts = false
 buildFuture = false
 canonifyURLs = false
 laxHtmlBlocks = true
+enableGitInfo = true
+# Tag and category pages are thin and not linked anywhere; keep them out of the build and sitemap.
+disableKinds = ["taxonomy", "term"]
 
-description = "James Cui, aka Fader, is a Berlin-based VFX and music visualization artist specializing in Unreal Engine Niagara, audio-reactive visuals, stage design, and live performance visuals."
+[frontmatter]
+  lastmod = [":git", "lastmod", ":fileModTime", ":default"]
+
+[sitemap]
+  changefreq = "monthly"
+
+description = "VJ Fader (James Cui) is a Berlin-based motion designer, stage designer and VFX artist making audio-reactive visuals, AI video and stage design."
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
 
 [privacy]
   [privacy.youtube]
@@ -67,12 +75,12 @@ description = "James Cui, aka Fader, is a Berlin-based VFX and music visualizati
 [params]
   author = "James Cui"
   location = "Berlin, Germany"
-  keywords = ["VFX artist", "music visualization", "audio reactive visuals", "Unreal Engine Niagara", "stage design", "live visuals", "Berlin"]
+  keywords = ["motion designer", "AI video", "generative AI video", "VFX artist", "music visualization", "audio reactive visuals", "Unreal Engine Niagara", "projection mapping", "stage design", "live visuals", "Berlin"]
 
   [params.seo]
     title = "Fader"
-    titleSuffix = "VFX Music Visualization and Stage Design"
-    description = "James Cui, aka Fader, is a Berlin-based VFX artist and music visualization artist specializing in Unreal Engine Niagara, audio-reactive visuals, stage design, live visuals, and immersive performance experiences."
+    titleSuffix = "Motion Design, AI Video, VFX and Stage Design"
+    description = "VJ Fader (James Cui): Berlin motion designer, stage designer and VFX artist. Audio-reactive visuals, AI video and stage design. Winner of the 2026 Janus Award."
     image = "/img/Fader_profile02_700.jpg"
     type = "website"
 
@@ -86,10 +94,9 @@ description = "James Cui, aka Fader, is a Berlin-based VFX and music visualizati
   [params.social]
     youtube = "https://www.youtube.com/user/vjfader"
     instagram = "https://www.instagram.com/vjfader"
-    linkedin = "https://www.linkedin.com/in/jamescui-6466051"
+    linkedin = "https://www.linkedin.com/in/james-cui-6466051/"
     facebook = "https://www.facebook.com/vjfader/"
     vimeo = "https://vimeo.com/vjfader"
-
 
   # If you want to remove the copyright text you need a Themefisher license.
   # This license is offered with a 50% discount for all Hugo users.
@@ -103,51 +110,42 @@ description = "James Cui, aka Fader, is a Berlin-based VFX and music visualizati
     enable = true
     title = "Visuals that move with sound"
     subtitle = "Audio-reactive visuals, VFX, and stage design for live experiences."
-    eyebrow = "James Cui · Fader · Berlin"
+    eyebrow = "VJ Fader · James Cui · Berlin"
 
   [params.vfx]
     title = "VFX Music Visualization"
     summary = "I create realtime visuals for music, immersive platforms, and digital experiences, combining particle systems, environment animation, motion design, and interactive visual storytelling across Unreal Engine, Unity, and After Effects."
     points = ["Audio-reactive visual systems for live music and immersive experiences", "Realtime VFX and particle-driven motion built with Unreal Engine Niagara", "VR and platform-focused visuals shaped for collaboration and delivery"]
     reel = "RTKDf4DGSlY"
-    subtitle = "VFX and music visualization artist specializing in real-time, audio-reactive experiences. I work primarily with Unreal Engine's Niagara particle system to create immersive visuals for live music performances, VR experiences, and innovative projects. Over the years, I've visualized everything from EDM and electronic music to experimental sound design — translating creative concepts into dynamic, technically sophisticated content that actually responds to the music."
-    paragraph = "I work well with clients, creative teams, and technical collaborators to turn ideas into clear, production-ready visual experiences. Whether joining an existing team or helping shape a project from the beginning, I bring a collaborative approach, strong communication, and a focus on delivering visuals that support the bigger creative vision. I am open for freelance work and collaboration, and you can reach out through the contact form or through my social media channels."
 
   [params.wrapper]
     enable = true
     title = "Meet Fader"
-    italic = "Since 2022, I've been creating audio-reactive visual experiences using Unreal Engine's Niagara particle system. My work spans live music performances, VR DJ experiences, and experimental sound design — translating audio into dynamic, responsive motion. I've collaborated with teams at TLM Partners and Sensorium to build immersive VR environments where the visuals actually react to the music in real-time. Every project starts with a simple question: how do I make particles dance to the beat?"
-    paragraph = "For over a decade, I've designed visual experiences for major festivals and events — from the Intro Electronic Music Festival in Beijing (2011-2018) to smaller experimental projects across Europe and Asia. I work closely with lighting teams, projection designers, and event producers to create cohesive stage environments. Whether it's video mapping, LED installations, or live VJing, the goal is always the same: craft something that feels alive and connected to the performance happening in front of it."
-  [params.wrapper.button]
-      caption = "Read More"
-      url = "/about"
+    italic = "I'm James Cui, aka VJ Fader, a Berlin-based motion designer and VFX artist. For 15+ years I've made visuals for music — festival stages, real-time particle systems, and now AI video."
+    paragraph = "I started with video mapping in 2010 and spent eight years designing stages for INTRO Festival. Since 2021 I've built audio-reactive VFX in Unreal Niagara for VR DJ experiences at TLM Partners and Sensorium. Today I take those real-time animations further with Runway and ComfyUI. I also teach Unity and video mapping workshops, from Berlin to Cape Town."
 
-  [params.blog]
-    enable = true
-    title = "Latest news from Fader"
-    subtitle = "Catch up with Fader, anytime and anywhere"
+  # Awards. The first one with hero = true is shown under the homepage headline.
+  [[params.awards]]
+    name = "Janus Award – Best Sonic Experience"
+    org = "Fulldome Festival Jena"
+    year = 2026
+    hero = true
+  [[params.awards]]
+    name = "App Art Award"
+    org = "ZKM Karlsruhe"
+    year = 2015
 
   [params.feature]
     reel = "TsxW3gy_A8M"
     enable = true
     title = "Stage Design for Immersive Live Experiences"
-    content = "The stage can be considered as a fine-art sculpture in the hands of an experienced designer, Fader shapes his vision according to the type of event and audience. The stage can be modern or classic. Regardless of outdoor or indoor, the LED screens, projectors, lasers and lights become the building blocks to a masterpiece."
-  [params.feature.button]
-      caption = "View More"
-      url = "/work"
+    content = "I treat a stage like a sculpture shaped by the event and its audience. Indoors or outdoors, modern or classic, LED screens, projectors, lasers and light are the materials I build with. Every design starts with a strong concept that gives the show its identity."
 
   [params.workfeature]
     enable = true
-    title = "A strong concept is the key!"
-    content = "Great stage designs begin with a strong concept. This is the key to creating a strong identity for festival or an event. A central theme that encapsulates the overall feeling and message to the audience wins.<br><br>Click on the button below to view Fader's latest stage design portfolio PDF to see samples of his latest projects.<br><br>"
   [params.workfeature.button]
       caption = "View my Stage Design Portfolio PDF"
       url = "/download/VJFader-StageDesign-Portfolio-2018v1.pdf"
-
-  [params.call]
-    enable = true
-    title = "Together, we will create the most memorable show!"
-    paragraph = "Every show take an entire dedicated team. With extensive planning and execution comes a great show that will stay in the audiences' memories for a long, long time."
 
   [params.contact]
     enable = true
