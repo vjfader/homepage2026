@@ -3,7 +3,7 @@
           {{ range .items }}
           {{ $full := (resources.Get (printf "images/%s" .image)).Resize "1600x webp q80" }}
           <li class="work-item">
-            <a href="{{ $full.Permalink }}" data-lightbox data-caption="{{ .title }} — {{ .meta }}">
+            <a href="{{ $full.RelPermalink }}" data-lightbox data-caption="{{ .title }} — {{ .meta }}">
               <div class="work-media">
                 {{ partial "v2/img.html" (dict "src" .image "alt" .title "widths" (slice 480 720 960) "sizes" "(min-width: 1100px) 360px, (min-width: 700px) 50vw, 100vw") }}
               </div>

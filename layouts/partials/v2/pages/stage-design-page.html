@@ -17,7 +17,7 @@
       <p>Great stage designs begin with a strong concept — a central theme that gives a festival or event its identity and carries the feeling and message to the audience.</p>
       {{ with .Site.Params.workfeature.button }}
       <div class="link-row">
-        <a class="btn btn-ghost" href="{{ .url | absURL }}">Stage design portfolio (PDF, 29 MB)</a>
+        <a class="btn btn-ghost" href="{{ .url | relURL }}">Stage design portfolio (PDF, 29 MB)</a>
       </div>
       {{ end }}
     </div>

@@ -44,10 +44,10 @@
 <meta name="twitter:description" content="{{ $seoDescription }}">
 <meta name="twitter:image" content="{{ $seoImage }}">
 
-<link rel="manifest" href="{{ "manifest.json" | absURL }}">
-<link rel="preload" href="{{ "fonts/inter-latin-var.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="manifest" href="{{ "manifest.json" | relURL }}">
+<link rel="preload" href="{{ "fonts/inter-latin-var.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
-<script defer src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+<script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
 {{ partial "seo_schema" . }}

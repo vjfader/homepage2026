@@ -10,15 +10,15 @@
 {{- range $widths -}}
   {{- if le . $img.Width -}}
     {{- $r := $img.Resize (printf "%dx webp q78" .) -}}
-    {{- $set = $set | append (printf "%s %dw" $r.Permalink .) -}}
+    {{- $set = $set | append (printf "%s %dw" $r.RelPermalink .) -}}
     {{- $largest = $r -}}
   {{- end -}}
 {{- end -}}
 {{- if lt (index (last 1 $widths) 0) $img.Width -}}{{- else -}}
   {{- /* source smaller than the biggest requested width: add the original size */ -}}
   {{- $r := $img.Resize (printf "%dx webp q78" $img.Width) -}}
-  {{- $set = $set | append (printf "%s %dw" $r.Permalink $img.Width) -}}
+  {{- $set = $set | append (printf "%s %dw" $r.RelPermalink $img.Width) -}}
   {{- $largest = $r -}}
 {{- end -}}
-<img src="{{ $largest.Permalink }}" srcset="{{ delimit (uniq $set) ", " }}" sizes="{{ .sizes | default "100vw" }}" width="{{ $largest.Width }}" height="{{ $largest.Height }}" alt="{{ .alt }}"{{ with .class }} class="{{ . }}"{{ end }}{{ if .eager }} fetchpriority="high" decoding="async"{{ else }} loading="lazy" decoding="async"{{ end }}>
+<img src="{{ $largest.RelPermalink }}" srcset="{{ delimit (uniq $set) ", " }}" sizes="{{ .sizes | default "100vw" }}" width="{{ $largest.Width }}" height="{{ $largest.Height }}" alt="{{ .alt }}"{{ with .class }} class="{{ . }}"{{ end }}{{ if .eager }} fetchpriority="high" decoding="async"{{ else }} loading="lazy" decoding="async"{{ end }}>
 {{- /**/ -}}

@@ -4,8 +4,8 @@
 {{- $alt := .Get "alt" | default $caption -}}
 {{- $href := .Get "link" | default $src -}}
 <figure class="figure">
-  <a href="{{ $href | absURL }}" data-lightbox data-caption="{{ $caption }}">
-    <img src="{{ $src | absURL }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+  <a href="{{ $href | relURL }}" data-lightbox data-caption="{{ $caption }}">
+    <img src="{{ $src | relURL }}" alt="{{ $alt }}" loading="lazy" decoding="async">
   </a>
   {{- with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
 </figure>

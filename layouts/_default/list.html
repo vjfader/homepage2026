@@ -12,7 +12,7 @@
     <ul class="post-list">
       {{ range $pages }}
       <li>
-        <a href="{{ .Permalink }}">
+        <a href="{{ .RelPermalink }}">
           <h2>{{ .Title }}</h2>
           {{ if not .Date.IsZero }}<p><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>{{ end }}
         </a>

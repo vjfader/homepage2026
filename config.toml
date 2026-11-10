@@ -4,7 +4,7 @@ languageCode = "en-us"
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
-canonifyURLs = true
+canonifyURLs = false
 laxHtmlBlocks = true
 
 description = "James Cui, aka Fader, is a Berlin-based VFX and music visualization artist specializing in Unreal Engine Niagara, audio-reactive visuals, stage design, and live performance visuals."

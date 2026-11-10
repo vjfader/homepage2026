@@ -4,7 +4,7 @@
 {{- else -}}
 <article class="article">
   <header class="container narrow article-head">
-    {{ if eq .Section "blog" }}<p class="eyebrow"><a href="{{ "blog/" | absURL }}">Journal</a></p>{{ end }}
+    {{ if eq .Section "blog" }}<p class="eyebrow"><a href="{{ "blog/" | relURL }}">Journal</a></p>{{ end }}
     <h1>{{ .Title }}</h1>
     {{ if not .Date.IsZero }}
     <p class="article-meta">
@@ -14,14 +14,14 @@
     {{ end }}
   </header>
   {{ with .Params.thumbnailImage }}
-  <div class="container narrow"><img class="article-cover" src="{{ . | absURL }}" alt="" loading="eager"></div>
+  <div class="container narrow"><img class="article-cover" src="{{ . | relURL }}" alt="" loading="eager"></div>
   {{ end }}
   <div class="container narrow prose">
     {{ .Content }}
   </div>
   {{ if eq .Section "blog" }}
   <nav class="container narrow article-nav" aria-label="More posts">
-    <a class="link-arrow" href="{{ "blog/" | absURL }}">All posts {{ partial "v2/icon.html" "arrow-right" }}</a>
+    <a class="link-arrow" href="{{ "blog/" | relURL }}">All posts {{ partial "v2/icon.html" "arrow-right" }}</a>
   </nav>
   {{ end }}
 </article>
