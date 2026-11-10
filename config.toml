@@ -1,5 +1,5 @@
 title = "Fader"
-baseURL = "https://www.vjfader.com/"
+baseURL = "https://vjfader.com/"
 languageCode = "en-us"
 enableRobotsTXT = true
 buildDrafts = false

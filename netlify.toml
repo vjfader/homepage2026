@@ -16,13 +16,6 @@
 [context.branch-deploy]
   command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
 
-# One address for the site: send vjfader.com to www.vjfader.com
-[[redirects]]
-  from = "https://vjfader.com/*"
-  to = "https://www.vjfader.com/:splat"
-  status = 301
-  force = true
-
 # Long browser caching for files whose names change when their content changes
 [[headers]]
   for = "/css/*"

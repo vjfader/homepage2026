@@ -23,7 +23,7 @@ thumbnailImage: /img/uploads/Photo-11.09.17-11-33-17-826x464.jpg
 coverImage: /img/uploads/Photo-11.09.17-11-33-17-826x464.jpg
 ---
 I had the pleasure of giving an exclusive interview to the B.O.B. Interior Design Magazine in South Korea. In this interview I gave my insight
-into my stage design career and working process. You may <a href="/download/[bob158]VJ Fader-interview.pdf">click on this link</a> to view the full interview PDF document.
+into my stage design career and working process. You may <a href="/download/bob-magazine-interview-vj-fader.pdf">click on this link</a> to view the full interview PDF document.
 
 <h3><em>Kim Sowon :</em> Could you please introduce yourself to our readers?</h3>
 <em>VJ Fader :</em> My Korean name is Choi Moonbong, my artist name is VJ Fader, my friends call me James. My family background is Korean Chinese. Last time when I visited South Korea was in 2011 for an artist residency called Gachang in the country side of Daegu. I have been living and studying in Los Angeles since I was a teenager. About 4 years ago I moved to Berlin where I call home. I studied in Illustration major at Art Center College of Design in Pasadena, USA. I was passionate about electronic music and had an interest in music videos and animation. After graduating in 2002 I started VJing at small clubs and parties. I’m also a self taught programmer and software developer working with Max/Msp/Jitter, Processing, TouchDesigner and Unity. In the past 5 years my professional career started involving stage designs.
@@ -80,4 +80,4 @@ Interviewer/Editor:Kim Sowon
 <em>김소원 :</em> 같이 작업하고 싶은 예술가나 참여하고 싶은 무대가 있는가?
 <em>VJ 페이더 :</em> 교황이 없었으면 미켈란젤로도 없었다. 잘 맞는 의뢰인과 함께 작업 해야만 한계에 끊임없이 도전할 수 있고, 상상력을 자극하거나 질문을 던지게 하는 무대를 만들 수 있다. 콘서트 투어와 라이브 공연에 참여해서 개념부터 무대, 영상, 조명 디자인까지 모두 내 손으로 기획하고 싶다. 결국, 관객을 위한 무대다. 일상에서 벗어나 무언가를 느끼러 온 관중 속 팬에게 보답하고 싶다.
 
-<a href="/download/[bob158]VJ Fader-interview.pdf">Click here to view this full interview PDF document.</a>
+<a href="/download/bob-magazine-interview-vj-fader.pdf">Click here to view this full interview PDF document.</a>
