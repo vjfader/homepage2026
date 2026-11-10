@@ -1,9 +1,24 @@
+<!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode | default "en" }}">
- <head>
-  <title>{{ .Title }}</title>
- </head>
- <body>
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
- </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Offline | {{ .Site.Title }}</title>
+  {{- /* Self-contained: this page is served from the service-worker cache when there is no network. */}}
+  <style>
+    html,body{height:100%;margin:0}
+    body{display:grid;place-items:center;padding:2rem;background:#0b0d12;color:#e9ecf5;font:17px/1.6 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-align:center}
+    h1{margin:0 0 .5rem;font-size:clamp(1.6rem,5vw,2.4rem);letter-spacing:-.02em}
+    p{margin:0 0 1.5rem;color:#a0a7b8}
+    button{min-height:46px;padding:.6rem 1.4rem;border:0;border-radius:999px;background:#e9ab6c;color:#1b1208;font:inherit;font-weight:600;cursor:pointer}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>You’re offline</h1>
+    <p>Check your internet connection and try again.</p>
+    <button type="button" onclick="location.reload()">Try again</button>
+  </main>
+</body>
 </html>

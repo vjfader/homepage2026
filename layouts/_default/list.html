@@ -1,40 +1,24 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}">
-<head>
-	{{ partial "head.html" . }}
-</head>
-<body>
-
-	{{ partial "header.html" . }}
-
-	{{ partial "global-header.html" . }}
-
-	<section class="blog section">
-		<div class="container">
-			<div class="row">
-				{{ range (.Paginator 6).Pages }}
-				<div class="col-md-6">
-					<article class="blog-post">
-
-						<a class="post-title" href="{{ .Permalink }}">{{ .Title }}
-							{{ with .Params.thumbnailImage }}
-							<img src="{{ . | absURL }}" class="img-responsive" alt="post-thumb">{{ end }}
-						</a>
-						<p>
-							{{ .Summary }}
-						</p>
-						<a href="{{ .Permalink }}" class="btn btn-main">Read More</a>
-					</article>
-				</div>
-				{{ end }}
-			</div>
-			<div class="col-12 text-center">
-				{{ template "_internal/pagination.html" . }}
-			</div>
-		</div>
-	</section>
-
-	{{ partial "footer.html" . }}
-
-</body>
-</html>
+{{ define "main" }}
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="container narrow">
+    <p class="eyebrow">{{ if eq .Section "blog" }}Journal{{ else if .Data.Singular }}{{ .Data.Singular | humanize }}{{ else }}Archive{{ end }}</p>
+    <h1 id="page-title">{{ if eq .Section "blog" }}Notes, reviews and interviews{{ else }}{{ .Title }}{{ end }}</h1>
+  </div>
+</section>
+<section class="section section-flush-top">
+  <div class="container narrow">
+    {{ $pages := .Pages }}
+    {{ if eq .Kind "taxonomy" }}{{ $pages = .Pages.ByTitle }}{{ end }}
+    <ul class="post-list">
+      {{ range $pages }}
+      <li>
+        <a href="{{ .Permalink }}">
+          <h2>{{ .Title }}</h2>
+          {{ if not .Date.IsZero }}<p><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>{{ end }}
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}" id="top">
+<head>
+  {{ partial "v2/head.html" . }}
+</head>
+<body>
+  {{ partial "v2/header.html" . }}
+  <main id="main">
+    {{- block "main" . }}{{ end -}}
+  </main>
+  {{ partial "v2/footer.html" . }}
+  {{ partial "v2/lightbox.html" . }}
+</body>
+</html>

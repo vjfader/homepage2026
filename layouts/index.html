@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}" id="top">
-<head>
-  {{ partial "v2/head.html" . }}
-</head>
-<body>
-  {{ partial "v2/header.html" . }}
-
-  <main id="main">
+{{ define "main" }}
 
     {{/* ---------- Hero ---------- */}}
     {{ with .Site.Params.slider }}
@@ -75,20 +67,7 @@
           <p class="eyebrow">Selected work</p>
           <h2 id="work-title">Stages, screens and spaces</h2>
         </div>
-        <ul class="work-grid">
-          {{ range . }}
-          {{ $full := (resources.Get (printf "images/%s" .image)).Resize "1600x webp q80" }}
-          <li class="work-item">
-            <a href="{{ $full.Permalink }}" data-lightbox data-caption="{{ .title }} — {{ .meta }}">
-              <div class="work-media">
-                {{ partial "v2/img.html" (dict "src" .image "alt" .title "widths" (slice 480 720 960) "sizes" "(min-width: 1100px) 360px, (min-width: 700px) 50vw, 100vw") }}
-              </div>
-              <h3>{{ .title }}</h3>
-              <p>{{ .meta }}</p>
-            </a>
-          </li>
-          {{ end }}
-        </ul>
+        {{ partial "v2/work-grid.html" (dict "items" (where . "featured" true)) }}
       </div>
     </section>
     {{ end }}
@@ -133,78 +112,7 @@
     </section>
     {{ end }}
 
-    {{/* ---------- Clients ---------- */}}
-    {{ with .Site.Data.work.clients }}
-    <section class="section section-tight" aria-labelledby="clients-title">
-      <div class="container">
-        <h2 class="clients-title" id="clients-title">Clients &amp; festivals</h2>
-        <ul class="clients">
-          {{ range . }}
-          <li>
-            <a href="{{ .url }}" target="_blank" rel="noopener">
-              {{ partial "v2/img.html" (dict "src" .logo "alt" .name "widths" (slice 200 400) "sizes" "160px") }}
-            </a>
-          </li>
-          {{ end }}
-        </ul>
-      </div>
-    </section>
-    {{ end }}
+    {{ partial "v2/clients.html" . }}
 
-    {{/* ---------- Contact ---------- */}}
-    {{ with .Site.Params.contact }}
-    <section class="section section-alt" id="contact" aria-labelledby="contact-title">
-      <div class="container contact">
-        <div class="contact-intro">
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Let’s make something that moves</h2>
-          <p class="section-lead">{{ .subtitle }}</p>
-          <ul class="contact-details">
-            <li>{{ partial "v2/icon.html" "mail" }}<a href="mailto:{{ .box.email }}">{{ .box.email }}</a></li>
-            <li>{{ partial "v2/icon.html" "map-pin" }}<span>{{ .box.address }}</span></li>
-          </ul>
-          {{ partial "v2/social.html" $ }}
-        </div>
-
-        <form class="contact-form" name="contact" method="POST" action="{{ "thanks/" | absURL }}" data-netlify="true" netlify-honeypot="bot-field" data-netlify-recaptcha="true">
-          <input type="hidden" name="form-name" value="contact">
-          <p class="sr-only" hidden><label>Leave this empty: <input name="bot-field"></label></p>
-          <div class="field-row">
-            <div class="field">
-              <label for="contact-name">{{ .form.name }}</label>
-              <input type="text" id="contact-name" name="name" autocomplete="name" required>
-            </div>
-            <div class="field">
-              <label for="contact-email">{{ .form.email }}</label>
-              <input type="email" id="contact-email" name="email" autocomplete="email" required>
-            </div>
-          </div>
-          <div class="field">
-            <label for="contact-subject">{{ .form.subject }}</label>
-            <input type="text" id="contact-subject" name="subject">
-          </div>
-          <div class="field">
-            <label for="contact-message">{{ .form.message }}</label>
-            <textarea id="contact-message" name="message" rows="6" required></textarea>
-          </div>
-          <div data-netlify-recaptcha="true"></div>
-          <p class="form-warning" data-contact-form-warning hidden>Please complete the CAPTCHA before sending your message.</p>
-          <button type="submit" class="btn">{{ .form.button }}</button>
-        </form>
-      </div>
-    </section>
-    {{ end }}
-
-  </main>
-
-  {{ partial "v2/footer.html" . }}
-
-  <dialog class="lightbox" data-lightbox-dialog aria-label="Image viewer">
-    <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close">{{ partial "v2/icon.html" "x" }}</button>
-    <figure>
-      <img alt="" data-lightbox-img>
-      <figcaption data-lightbox-caption></figcaption>
-    </figure>
-  </dialog>
-</body>
-</html>
+        {{ partial "v2/contact.html" . }}
+{{ end }}

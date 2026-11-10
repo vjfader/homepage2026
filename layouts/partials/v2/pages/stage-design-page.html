@@ -1,0 +1,80 @@
+{{ partial "v2/page-hero.html" (dict
+  "eyebrow" "Stage Design"
+  "title" "Spatial design for live experiences that need identity, scale, and atmosphere."
+  "lead" "Immersive live environments shaped around music, audience flow, and the practical realities of production."
+  "image" "stage-hero.jpg"
+  "position" "50% 60%") }}
+
+<section class="section" aria-labelledby="concept-title">
+  <div class="container feature">
+    <div class="feature-media">
+      {{ partial "v2/video.html" (dict "id" .Site.Params.feature.reel "title" "Stage design reel" "poster" "reel-stage.jpg") }}
+    </div>
+    <div class="feature-body">
+      <p class="eyebrow">Concept first</p>
+      <h2 id="concept-title">{{ .Site.Params.feature.title }}</h2>
+      <p>{{ .Site.Params.feature.content | plainify }}</p>
+      <p>Great stage designs begin with a strong concept — a central theme that gives a festival or event its identity and carries the feeling and message to the audience.</p>
+      {{ with .Site.Params.workfeature.button }}
+      <div class="link-row">
+        <a class="btn btn-ghost" href="{{ .url | absURL }}">Stage design portfolio (PDF, 29 MB)</a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="scope-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Design scope</p>
+      <h2 id="scope-title">From concept to show day</h2>
+      <p class="section-lead">Stage environments shaped through concept, technical feasibility, and collaboration with the full live production team.</p>
+    </div>
+    <ol class="services">
+      <li><span class="services-num">01</span><h3>Concept design</h3><p>Visual concepts built around identity, audience emotion, and the architecture of the show.</p></li>
+      <li><span class="services-num">02</span><h3>LED and projection</h3><p>Systems that integrate screens, content, projection, and form into one visual language.</p></li>
+      <li><span class="services-num">03</span><h3>Production alignment</h3><p>Close collaboration with lighting, content, and technical teams so the concept holds up live.</p></li>
+      <li><span class="services-num">04</span><h3>Collaborative delivery</h3><p>Flexible collaboration from early ideation through build, refinement, and execution.</p></li>
+    </ol>
+  </div>
+</section>
+
+{{ with .Site.Data.projects }}
+<section class="section" id="gallery" aria-labelledby="gallery-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Gallery</p>
+      <h2 id="gallery-title">Stages, screens and spaces</h2>
+    </div>
+    {{ partial "v2/work-grid.html" (dict "items" .) }}
+  </div>
+</section>
+{{ end }}
+
+<section class="section section-alt" aria-labelledby="includes-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Scope</p>
+      <h2 id="includes-title">What this work includes</h2>
+    </div>
+    <div class="columns-3">
+      <div>
+        <h3>Typical deliverables</h3>
+        <p>Stage concepts, visual identity systems, content integration plans, screen and projection layouts, and design direction aligned with show goals.</p>
+      </div>
+      <div>
+        <h3>Production context</h3>
+        <p>Festivals, concerts, touring shows, and immersive event environments where concept, technical feasibility, and audience impact all matter.</p>
+      </div>
+      <div>
+        <h3>Best-fit clients</h3>
+        <p>Festival producers, event teams, music brands, and creative partners looking for strong visual identity and atmosphere at live scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ partial "v2/clients.html" . }}
+
+{{ partial "v2/contact.html" . }}

@@ -1,0 +1,16 @@
+{{ with .Site.Data.work.clients }}
+    <section class="section section-tight" aria-labelledby="clients-title">
+      <div class="container">
+        <h2 class="clients-title" id="clients-title">Clients &amp; festivals</h2>
+        <ul class="clients">
+          {{ range . }}
+          <li>
+            <a href="{{ .url }}" target="_blank" rel="noopener">
+              {{ partial "v2/img.html" (dict "src" .logo "alt" .name "widths" (slice 200 400) "sizes" "160px") }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </section>
+    {{ end }}

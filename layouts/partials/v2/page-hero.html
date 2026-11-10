@@ -1,0 +1,12 @@
+{{- /*
+  Compact hero for inner pages.
+  Usage: partial "v2/page-hero.html" (dict "eyebrow" "…" "title" "…" "lead" "…" "image" "reel-vfx.jpg" "position" "50% 50%")
+*/ -}}
+<section class="page-hero{{ if .image }} page-hero-image{{ end }}" aria-labelledby="page-title">
+  {{ with .image }}{{ partial "v2/img.html" (dict "src" . "alt" "" "widths" (slice 768 1280 1920) "sizes" "100vw" "class" "page-hero-media" "eager" true) | replaceRE `<img ` (printf `<img style="object-position:%s" ` ($.position | default "50% 50%")) | safeHTML }}{{ end }}
+  <div class="container">
+    {{ with .eyebrow }}<p class="eyebrow">{{ . }}</p>{{ end }}
+    <h1 id="page-title">{{ .title }}</h1>
+    {{ with .lead }}<p class="page-lead">{{ . }}</p>{{ end }}
+  </div>
+</section>

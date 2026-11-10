@@ -15,6 +15,10 @@ description = "James Cui, aka Fader, is a Berlin-based VFX and music visualizati
       unsafe = true
 
 
+[privacy]
+  [privacy.youtube]
+    privacyEnhanced = true
+
 [menu]
 
   [[menu.header]]

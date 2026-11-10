@@ -1,20 +1,55 @@
-# Selected work shown on the homepage.
+# Stage and live work.
+# featured: true  → shown in "Selected work" on the homepage (keep it to 6).
+# All entries are shown in the Stage Design gallery.
 # image: file in assets/images/work/ (resized automatically).
 - title: Intro Festival Main Stage
   meta: Shanghai · 2016
   image: work/intro-shanghai-2016.jpg
+  featured: true
 - title: MIDI Electronic Main Stage
   meta: 2017
   image: work/midi-electronic-2017.jpg
+  featured: true
 - title: Invasion Music Festival
   meta: Myanmar · 2018
   image: work/invasion-myanmar-2018.jpg
+  featured: true
 - title: Intro Festival "TechnoShip"
   meta: Beijing · 2013
   image: work/intro-beijing-2013.jpg
+  featured: true
 - title: MLove AV Mapping
   meta: Projection mapping · 2014
   image: work/mlove-mapping-2014.jpg
+  featured: true
 - title: Halloween Video Mapping
   meta: Projection mapping · 2015
   image: work/halloween-mapping-2015.jpg
+  featured: true
+- title: Intro Festival
+  meta: Beijing · 2017
+  image: work/intro-beijing-2017.jpg
+- title: Intro Festival
+  meta: Beijing · 2015
+  image: work/intro-beijing-2015.png
+- title: Intro Festival Main Stage
+  meta: Shanghai · 2016
+  image: work/intro-shanghai-2016-b.jpg
+- title: MIDI Electronic Main Stage
+  meta: 2017
+  image: work/midi-electronic-2017-b.jpg
+- title: ExistDance Echinodome
+  meta: Costa Rica · 2015
+  image: work/existdance-2015.jpg
+- title: Backwoods Music Festival
+  meta: 2015
+  image: work/backwoods-2015.jpg
+- title: Backwoods Music Festival
+  meta: 2015
+  image: work/backwoods-2015-b.jpg
+- title: Hifana 3D
+  meta: Tokyo
+  image: work/hifana-tokyo.jpg
+- title: Invasion Music Festival
+  meta: Myanmar · 2018
+  image: work/invasion-myanmar-2018-b.jpg

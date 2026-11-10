@@ -1,47 +1,29 @@
-<!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}">
-<head>
-	{{ partial "head.html" . }}
-</head>
-<body>
-
-	{{ partial "header.html" . }}
-
-	{{ if isset .Params "id" }}
-		{{ partial .Params.id . }}
-	{{ else }}
-
-	<div class="post">
-	  <!-- Wrapper Start -->
-	  <section class="section" style="border: 0px dotted #ddd;">
-	    <div class="container">
-	      <div class="row">
-	        <div>
-	          <div class="block">
-							{{ with .Params.thumbnailImage }}<img src="{{ . | absURL }}" width="100%" alt="{{ $.Title }}" loading="lazy"> {{ end }}
-	            <h1>{{ .Params.title }}</h1>
-
-	            <div class="post-info-wrapper">
-	              <p class="italic">By <span class="bold">{{ .Params.author | default .Site.Params.author }}</span> on <span class="bold">{{ .Site.Params.dateFormat | default "Jan 2, 2006" | .Date.Format }}</span></p>
-	            </div>
-	            <hr />
-	            <div class="post-content">{{ .Content }}</div>
-	          </div>
-	        </div><!-- .col-md-7 close -->
-	      </div>
-	    </div>
-	  </section>
-	</div>
-	<p class="center-text" style="padding: 30px; margin:0px;">
-	  <a class="btn btn-main" href="{{ "blog/" | absURL }}">Back to blog</a>
-	</p>
-
-	{{ if and (isset .Site.Params "call") (.Site.Params.call.enable) }}
-		{{ partial "call-to-action.html" . }}
-	{{ end }}
-
-	{{ end }}
-
-	{{ partial "footer.html" . }}
-</body>
-</html>
+{{ define "main" }}
+{{- if .Params.id -}}
+  {{ partial (printf "v2/pages/%s.html" .Params.id) . }}
+{{- else -}}
+<article class="article">
+  <header class="container narrow article-head">
+    {{ if eq .Section "blog" }}<p class="eyebrow"><a href="{{ "blog/" | absURL }}">Journal</a></p>{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ if not .Date.IsZero }}
+    <p class="article-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+      {{ with .Params.tags }} · {{ delimit (first 3 .) ", " }}{{ end }}
+    </p>
+    {{ end }}
+  </header>
+  {{ with .Params.thumbnailImage }}
+  <div class="container narrow"><img class="article-cover" src="{{ . | absURL }}" alt="" loading="eager"></div>
+  {{ end }}
+  <div class="container narrow prose">
+    {{ .Content }}
+  </div>
+  {{ if eq .Section "blog" }}
+  <nav class="container narrow article-nav" aria-label="More posts">
+    <a class="link-arrow" href="{{ "blog/" | absURL }}">All posts {{ partial "v2/icon.html" "arrow-right" }}</a>
+  </nav>
+  {{ end }}
+</article>
+{{- end -}}
+{{ end }}

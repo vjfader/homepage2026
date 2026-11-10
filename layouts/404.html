@@ -1,9 +1,13 @@
-<html lang="{{ .Site.LanguageCode | default "en" }}">
- <head>
-  <title>{{ .Title }}</title>
- </head>
- <body>
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
- </body>
-</html>
+{{ define "main" }}
+<section class="page-hero page-hero-center" aria-labelledby="page-title">
+  <div class="container narrow">
+    <p class="eyebrow">404</p>
+    <h1 id="page-title">This page doesn’t exist.</h1>
+    <p class="page-lead">It may have moved when the site was redesigned.</p>
+    <div class="hero-actions">
+      <a class="btn" href="{{ "/" | absURL }}">Go to homepage</a>
+      <a class="btn btn-ghost" href="{{ "/#contact" | absURL }}">Contact</a>
+    </div>
+  </div>
+</section>
+{{ end }}
