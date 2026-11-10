@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
 <head>
 	{{ partial "head.html" . }}
 </head>
@@ -18,14 +18,14 @@
 	      <div class="row">
 	        <div>
 	          <div class="block">
-							{{ with .Params.thumbnailImage }}<img src="{{. | absURL }}" width="100%" alig alt="post-image"> {{ end }}
+							{{ with .Params.thumbnailImage }}<img src="{{ . | absURL }}" width="100%" alt="{{ $.Title }}" loading="lazy"> {{ end }}
 	            <h1>{{ .Params.title }}</h1>
 
 	            <div class="post-info-wrapper">
-	              <p class="italic">By <span class="bold">{{ .Params.author }}</span> on <span class="bold">{{ .Site.Params.dateFormat | default "Jan 2, 2006" | .Date.Format }}</span></p>
+	              <p class="italic">By <span class="bold">{{ .Params.author | default .Site.Params.author }}</span> on <span class="bold">{{ .Site.Params.dateFormat | default "Jan 2, 2006" | .Date.Format }}</span></p>
 	            </div>
 	            <hr />
-	            <p>{{ .Content }}</p>
+	            <div class="post-content">{{ .Content }}</div>
 	          </div>
 	        </div><!-- .col-md-7 close -->
 	      </div>
@@ -33,7 +33,7 @@
 	  </section>
 	</div>
 	<p class="center-text" style="padding: 30px; margin:0px;">
-	  <a class="btn btn-main" href="{{ $.Site.BaseURL }}/blog">Back to blog</a>
+	  <a class="btn btn-main" href="{{ "blog/" | absURL }}">Back to blog</a>
 	</p>
 
 	{{ if and (isset .Site.Params "call") (.Site.Params.call.enable) }}

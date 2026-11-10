@@ -15,7 +15,7 @@
 
 // Incrementing CACHE_VERSION will kick off the install event and force previously cached
 // resources to be cached again.
-const CACHE_VERSION = 1;
+const CACHE_VERSION = 2;
 let CURRENT_CACHES = {
   offline: 'offline-v' + CACHE_VERSION
 };
@@ -80,7 +80,7 @@ self.addEventListener('fetch', event => {
   // which checks for a GET request with an Accept: text/html header.
   if (event.request.mode === 'navigate' ||
       (event.request.method === 'GET' &&
-       event.request.headers.get('accept').includes('text/html'))) {
+       (event.request.headers.get('accept') || '').includes('text/html'))) {
     console.log('Handling fetch event for', event.request.url);
     event.respondWith(
       fetch(event.request).catch(error => {

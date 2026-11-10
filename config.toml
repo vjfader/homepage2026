@@ -76,6 +76,8 @@ description = "James Cui, aka Fader, is a Berlin-based VFX and music visualizati
     youtube = "https://www.youtube.com/user/vjfader"
     instagram = "https://www.instagram.com/vjfader"
     linkedin = "https://www.linkedin.com/in/jamescui-6466051"
+    facebook = "https://www.facebook.com/vjfader/"
+    vimeo = "https://vimeo.com/vjfader"
 
 
   # If you want to remove the copyright text you need a Themefisher license.
@@ -144,7 +146,7 @@ description = "James Cui, aka Fader, is a Berlin-based VFX and music visualizati
     [params.contact.box]
       title = "Contact"
       address = "Berlin, Germany"
-      email = "Email: vjfader@mail.com"
-      phone = "Phone: +49 17680551258‬"
+      email = "vjfader@gmail.com"
+      phone = "Phone: +49 17680551258"
     [params.contact.gmaps]
       title = "Where in the World?"

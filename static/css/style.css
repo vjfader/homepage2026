@@ -646,3 +646,48 @@
     margin-bottom: 24px;
   }
 }
+
+/* ---- Onepage shared text styles (moved from inline style attributes) ---- */
+.section-title.onepage-light-text {
+  margin-bottom: 32px;
+}
+
+.onepage-copy,
+.onepage-dark-section p.onepage-copy,
+#service p.onepage-copy {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+.onepage-copy.onepage-about-links {
+  line-height: 1.35;
+}
+
+.onepage-mb {
+  margin-top: 0 !important;
+  margin-bottom: 32px !important;
+}
+
+.btn-stack {
+  display: inline-block;
+  margin-right: 0;
+  margin-bottom: 18px;
+}
+
+/* Footer social icons */
+.footer-social {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.footer-social li {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.footer-social li:last-child {
+  padding-right: 0;
+}

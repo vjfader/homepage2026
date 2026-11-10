@@ -10,16 +10,16 @@
             {{ end }}
           </ul>
         </div>
-        <div>
+        <ul class="footer-social">
           {{ partial "social.html" . }}
-        </div>
-        <p>Copyright &copy; Fader 2018. All rights reserved.</p>
+        </ul>
+        <p>Copyright &copy; {{ .Site.Title }} {{ now.Year }}. All rights reserved.</p>
       </div>
     </div>
   </div>
 </footer>
 
-<script src="/js/load-photoswipe.js"></script>
+<script src="{{ .Site.BaseURL }}js/load-photoswipe.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var contactForms = document.querySelectorAll('form[name="contact"]');

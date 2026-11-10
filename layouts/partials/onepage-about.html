@@ -1,14 +1,14 @@
-<section id="about" class="onepage-dark-section" style="background-color:#232633;color:#dfe7ff;">
+<section id="about" class="onepage-dark-section">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-12">
         <div class="block">
-          <div class="section-title onepage-light-text" style="color:#dfe7ff;margin-bottom:32px;">
-            <h2 class="onepage-light-heading" style="color:#f3f6ff;">{{ .Site.Params.wrapper.title }}</h2>
-            <div class="onepage-richtext onepage-copy onepage-about-intro" style="color:#dfe7ff;font-family:'Roboto',sans-serif;font-size:16px;line-height:1.4;font-weight:300;">{{ .Site.Params.wrapper.italic | markdownify }}</div>
+          <div class="section-title onepage-light-text">
+            <h2 class="onepage-light-heading">{{ .Site.Params.wrapper.title }}</h2>
+            <div class="onepage-richtext onepage-copy onepage-about-intro">{{ .Site.Params.wrapper.italic | markdownify }}</div>
           </div>
-          <div class="onepage-richtext onepage-light-text onepage-copy onepage-about-body" style="color:#dfe7ff;font-family:'Roboto',sans-serif;font-size:16px;line-height:1.4;font-weight:300;margin-top:0;margin-bottom:32px;">{{ .Site.Params.wrapper.paragraph | markdownify }}</div>
-          <div class="onepage-about-links onepage-light-text onepage-copy" style="color:#dfe7ff;font-family:'Roboto',sans-serif;font-size:16px;line-height:1.35;font-weight:300;">
+          <div class="onepage-richtext onepage-light-text onepage-copy onepage-about-body onepage-mb">{{ .Site.Params.wrapper.paragraph | markdownify }}</div>
+          <div class="onepage-about-links onepage-light-text onepage-copy">
             <div>YouTube: <a href="{{ .Site.Params.social.youtube }}">www.youtube.com/user/vjfader</a></div>
             <div>Instagram: <a href="{{ .Site.Params.social.instagram }}">www.instagram.com/vjfader</a></div>
             <div>LinkedIn: <a href="{{ .Site.Params.social.linkedin }}">www.linkedin.com/in/jamescui-6466051</a></div>
@@ -28,9 +28,9 @@
 <section id="service">
   <div class="container">
     <div class="row">
-      <div class="section-title onepage-light-text" style="color:#dfe7ff;margin-bottom:32px;">
-        <h2 class="onepage-light-heading" style="color:#f3f6ff;">{{ .Site.Data.service.title }}</h2>
-        <p class="onepage-light-text onepage-copy" style="color:#dfe7ff;font-family:'Roboto',sans-serif;font-size:16px;line-height:1.4;font-weight:300;">{{ .Site.Data.service.subtitle }}</p>
+      <div class="section-title onepage-light-text">
+        <h2 class="onepage-light-heading">{{ .Site.Data.service.title }}</h2>
+        <p class="onepage-light-text onepage-copy">{{ .Site.Data.service.subtitle }}</p>
       </div>
     </div>
     <div class="row service-grid">
@@ -38,8 +38,8 @@
       <div class="col-sm-6 col-md-3 service-grid-item">
         <div class="service-item">
           <i class="{{ .icon }}"></i>
-          <h4 class="onepage-light-heading" style="color:#f3f6ff;">{{ .name }}</h4>
-          <p class="onepage-light-text onepage-copy" style="color:#dfe7ff;font-family:'Roboto',sans-serif;font-size:16px;line-height:1.4;font-weight:300;">{{ .text }}</p>
+          <h4 class="onepage-light-heading">{{ .name }}</h4>
+          <p class="onepage-light-text onepage-copy">{{ .text }}</p>
         </div>
       </div>
       {{ end }}
