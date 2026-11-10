@@ -20,6 +20,7 @@
 </footer>
 
 <script src="{{ .Site.BaseURL }}js/load-photoswipe.js"></script>
+{{ partial "analytics.html" . }}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var contactForms = document.querySelectorAll('form[name="contact"]');

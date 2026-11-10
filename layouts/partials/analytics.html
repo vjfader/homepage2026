@@ -1,0 +1,56 @@
+{{- /* Analytics, configured in [params.analytics] in config.toml. Never runs on `hugo server`. */ -}}
+{{- with site.Params.analytics -}}
+{{- if not hugo.IsServer -}}
+
+{{- with .plausibleDomain }}
+<!-- Plausible: cookie-free, no consent banner required -->
+<script defer data-domain="{{ . }}" src="https://plausible.io/js/script.js"></script>
+{{- end }}
+
+{{- with .ga4 }}
+<!-- Google Analytics 4: loads only after the visitor accepts -->
+<div class="consent-banner" id="consent-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+  <p>This site uses Google Analytics cookies to understand how visitors use it. Do you accept?</p>
+  <div class="consent-actions">
+    <button type="button" class="btn btn-main" data-consent="granted">Accept</button>
+    <button type="button" class="btn btn-main consent-decline" data-consent="denied">Decline</button>
+  </div>
+</div>
+<script>
+(function () {
+  var GA_ID = {{ . }};
+  var KEY = 'analytics-consent';
+  var banner = document.getElementById('consent-banner');
+
+  function getChoice() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function setChoice(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+
+  function loadGA() {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_ID);
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  }
+
+  var choice = getChoice();
+  if (choice === 'granted') { loadGA(); return; }
+  if (choice === 'denied') { return; }
+
+  banner.hidden = false;
+  banner.addEventListener('click', function (e) {
+    var v = e.target.getAttribute('data-consent');
+    if (!v) { return; }
+    setChoice(v);
+    banner.hidden = true;
+    if (v === 'granted') { loadGA(); }
+  });
+})();
+</script>
+{{- end }}
+
+{{- end -}}
+{{- end -}}

@@ -72,6 +72,13 @@ description = "James Cui, aka Fader, is a Berlin-based VFX and music visualizati
     image = "/img/Fader_profile02_700.jpg"
     type = "website"
 
+  # Analytics: fill in ONE of these. Leave both empty to disable analytics.
+  # plausibleDomain: cookie-free, no consent banner needed (e.g. "vjfader.com").
+  # ga4: Google Analytics 4 ID (e.g. "G-XXXXXXXXXX"); loads only after the visitor accepts the cookie banner.
+  [params.analytics]
+    plausibleDomain = ""
+    ga4 = ""
+
   [params.social]
     youtube = "https://www.youtube.com/user/vjfader"
     instagram = "https://www.instagram.com/vjfader"
@@ -147,6 +154,5 @@ description = "James Cui, aka Fader, is a Berlin-based VFX and music visualizati
       title = "Contact"
       address = "Berlin, Germany"
       email = "vjfader@gmail.com"
-      phone = "Phone: +49 17680551258"
     [params.contact.gmaps]
       title = "Where in the World?"
